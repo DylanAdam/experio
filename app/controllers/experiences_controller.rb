@@ -13,7 +13,7 @@ class ExperiencesController < ApplicationController
   end
 
   def edit
-     @experience = Experience.find(params[:id])
+    @experience = Experience.find(params[:id])
   end
 
   def create
@@ -38,6 +38,6 @@ class ExperiencesController < ApplicationController
   private
 
   def experiences_params
-    params.require(:experience).permit(:title, :description, :address, :price, :capacity_min, :validity_date, :category, :user_id, :picture)
+    params.require(:experience).permit(:title, :description, :address, :price, :capacity_min, :validity_date, :category, :user_id, :picture, :duration)
   end
 end
