@@ -10,10 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_130934) do
+ActiveRecord::Schema.define(version: 2019_02_18_141512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "date"
+    t.integer "number_of_participants"
+    t.bigint "user_id"
+    t.bigint "experience_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "review_id"
+    t.index ["experience_id"], name: "index_bookings_on_experience_id"
+    t.index ["review_id"], name: "index_bookings_on_review_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "address"
+    t.integer "price"
+    t.integer "capacity_min"
+    t.date "validity_date"
+    t.string "category"
+    t.bigint "user_id"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_experiences_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.integer "rating"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +60,16 @@ ActiveRecord::Schema.define(version: 2019_02_18_130934) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "company"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "experiences"
+  add_foreign_key "bookings", "reviews"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "experiences", "users"
+  add_foreign_key "reviews", "bookings"
 end
