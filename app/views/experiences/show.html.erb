@@ -1,8 +1,16 @@
-<h1><%= @experience.title %></h1>
-<p><%= @experience.description %></p>
+<div class="show-banner">
+  <div class="show-image" style="background-image: url('<%= @experience.picture %>');"></div>
+</div>
 
-<div class="show-image" style="background-image: url('<%= @experience.picture %>');"></div>
-<p><%= @experience.address %></p>
-<p><%= @experience.price %></p>
+<div class="info-card">
+  <h1><%= @experience.title %></h1>
+  <p><%= @experience.description %></p>
+  <p><%= @experience.address %></p>
+  <p><%= @experience.price %></p>
 
-<%= image_tag "mock_map" %>
+</div>
+
+<div class="map">
+  <%= image_tag "mock_map" %>
+</div>
+
