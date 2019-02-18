@@ -11,11 +11,8 @@ user1 = User.create!(email: "edouard.vaudour@icloud.com", password: "azerty", fi
 user2 = User.create!(email: "adamdylan.p@gmail.com", password: "azerty", first_name: "Dylan", last_name: "Adam", company: "Space x")
 user3 = User.create!(email: "claire.edith.demont@gmail.com", password: "azerty", first_name: "Claire", last_name: "Demont", company: "Monsanto")
 
-<<<<<<< HEAD
+
 9.times do
-=======
-9.times do 
->>>>>>> master
   Experience.create!(title: ["Escape Game", "Laser game", "Bowling", "VR laser game", "Paintball", "Wine tasting", "Boat Party"].sample, description: Faker::TvShows::HowIMetYourMother.quote, address:Faker::Address.street_address, price: Faker::Commerce.price, capacity_min: rand(1..15), validity_date: Faker::Date.forward(30), category: ["Indoor", "Outdoor", "Culture", "Fun", "Extreme"].sample, picture: Faker::LoremPixel.image, user: User.all.sample)
 end
 
@@ -25,8 +22,4 @@ booking3 = Booking.create!(date: Faker::Date.forward(30), number_of_participants
 
 review1 = Review.create!(description: Faker::Movies::StarWars.quote, rating: rand(0..5), booking: booking1)
 review2 = Review.create!(description: Faker::Movies::StarWars.quote, rating: rand(0..5), booking: booking2)
-<<<<<<< HEAD
 review3 = Review.create!(description: Faker::Movies::StarWars.quote, rating: rand(0..5), booking: booking3)
-=======
-review3 = Review.create!(description: Faker::Movies::StarWars.quote, rating: rand(0..5), booking: booking3)
->>>>>>> master
