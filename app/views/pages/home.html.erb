@@ -4,77 +4,15 @@
 </div>
 
 <div class="cards">
-
- <div class="card-trip card-category">
-  <img src="IMAGE_URL_HERE">
-  <div class="card-trip-infos">
     <div>
-      <h2>Experience 1</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+      <% @experiences.each do |experience| %>
+      <div class="card-trip card-category">
+  <img src="https://source.unsplash.com/random">
+  <div class="card-trip-infos">
+            <p><%= experience.title %>
+              <h2 class="card-trip-pricing">Only from €99.99 / person</h2>
   </div>
 </div>
-
- <div class="card-trip card-category">
-  <img src="IMAGE_URL_HERE">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Experience 2</h2>
-      <p>Short description here!</p>
+      <% end %>
     </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-  </div>
-</div>
-
- <div class="card-trip card-category">
-  <img src="IMAGE_URL_HERE">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Experience 3</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-  </div>
-</div>
-
-<div class="card-trip card-category">
-  <img src="IMAGE_URL_HERE">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Experience 4</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-  </div>
-</div>
-
-<div class="card-trip card-category">
-  <img src="IMAGE_URL_HERE">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Experience 5</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-  </div>
-</div>
-
-<div class="card-trip card-category">
-  <img src="IMAGE_URL_HERE">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Experience 6</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-  </div>
-</div>
-
 </div>
