@@ -21,16 +21,9 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    @experience = Experience.new(experiences_params)
-<<<<<<< HEAD
     @experience.user = current_user
     if @experience.save!
       redirect_to experience_path(@experience)
-=======
-    authorize @experience
-    if @experience.save
-      redirect_to experience_path(experience)
->>>>>>> f9bd939223848aeed465289295c33e09371e872c
     else
       render :new
     end
