@@ -1,8 +1,37 @@
-.home-banner {
-  background-image: url(background-image.jpg);
-  background-size: cover;
-  height: 80vh;
-  color: #eee;
+.banner {
+  color: white;
   text-align: center;
-  padding-top: 40vh;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.banner h2 {
+  font-size: 30px;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  padding: 10px;
+  color: white;
+  opacity: 0.9;
+}
+
+.banner p {
+  font-size: 35px;
+  color: white;
+  opacity: 1;
+  margin-bottom: 30px;
+  text-decoration: underline;
+  text-decoration-color: #d9394d;
+  text-decoration-size: 3px;
 }
