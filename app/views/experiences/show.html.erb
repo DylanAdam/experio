@@ -60,12 +60,21 @@
     </div>
   </div>
 
-
   <div class="description">
     <h2>A propos de <%= @experience.title %></h2>
     <div class="description-content">
       <p><%= @experience.description %></p>
     </div>
+  </div>
+
+
+  <div class="booking-form">
+    <h2>Book this experience</h2>
+    <%= simple_form_for @booking do |f| %>
+      <%= f.input :date %>
+      <%= f.input :number_of_participants %>
+      <%= f.submit "Book your experience", class: "btn btn-primary" %>
+    <% end %>
   </div>
 
 </div>

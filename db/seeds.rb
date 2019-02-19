@@ -10,8 +10,10 @@ require 'faker'
 user1 = User.create!(email: "edouard.vaudour@icloud.com", password: "azerty", first_name: "Edouard", last_name: "Vaudour", company: "Luma")
 user2 = User.create!(email: "adamdylan.p@gmail.com", password: "azerty", first_name: "Dylan", last_name: "Adam", company: "Space x")
 user3 = User.create!(email: "claire.edith.demont@gmail.com", password: "azerty", first_name: "Claire", last_name: "Demont", company: "Monsanto")
+user4 = User.create!(email: "alex@yahoo.fr", password: "azerty", first_name: "Alex", last_name: "Cousin", company: "Tesla")
 
 puts "users created"
+
 
 9.times do
   Experience.create!(title: ["Escape Game", "Laser game", "Bowling", "VR laser game", "Paintball", "Wine tasting", "Boat Party"].sample, description: Faker::TvShows::HowIMetYourMother.quote, address:Faker::Address.street_address, price: Faker::Commerce.price, capacity_min: rand(1..15), validity_date: Faker::Date.forward(30), category: ["Indoor", "Outdoor", "Culture", "Fun", "Extreme"].sample, picture: Faker::LoremPixel.image, user: User.all.sample, duration: ["3h", "2h", "2h30", "1h", "1h30", "50min"].sample)
