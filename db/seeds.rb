@@ -16,13 +16,13 @@ puts "users created"
 
 
 9.times do
-  Experience.create!(title: ["Escape Game", "Laser game", "Bowling", "VR laser game", "Paintball", "Wine tasting", "Boat Party"].sample, description: Faker::TvShows::HowIMetYourMother.quote, address:Faker::Address.street_address, price: Faker::Commerce.price, capacity_min: rand(1..15), validity_date: Faker::Date.forward(30), category: ["Indoor", "Outdoor", "Culture", "Fun", "Extreme"].sample, picture: Faker::LoremPixel.image, user: User.all.sample, duration: ["3h", "2h", "2h30", "1h", "1h30", "50min"].sample)
+  Experience.create!(title: ["Escape Game", "Laser game", "Bowling", "VR laser game", "Paintball", "Wine tasting", "Boat Party"].sample, description: Faker::TvShows::HowIMetYourMother.quote, address:Faker::Address.street_address, price: Faker::Commerce.price, capacity_min: rand(1..15), validity_date: Faker::Date.forward(30), category: ["Indoor", "Outdoor", "Culture", "Fun", "Extreme"].sample, photo: Faker::LoremPixel.image, user: User.all.sample, duration: ["3h", "2h", "2h30", "1h", "1h30", "50min"].sample)
 end
 
 puts "9 experiences created"
 
 @description = "Vagabund Brauerei not only wants to make beer for people to drink, but we also want to get people involved in the beer making process. That's why we offer brew courses to beginners, who want to have a better handle on how beer is made. The beginner's course is also good for homebrewers who want to have a look at what goes into brewing on a small industrial sized brew system. A course consists of a small group of people in order to make it more personal. We get started at 10:30 and go until 17:00. The course includes coffee, beers, snacks, lunch, and a free glass of the finished beer once the beer is ready to be served. Participation costs €125 (including tax) per person. If interested, please send an email to info@vagabundbrauerei.com."
-Experience.create!(title: "Beer brewing workshop", description: @description, address:"5 rue du sentier, 75002 PARIS", price: 40, capacity_min: 5, validity_date: Faker::Date.forward(30), category: "Indoor", picture: Faker::LoremPixel.image, user: User.all.sample, duration: "3h")
+Experience.create!(title: "Beer brewing workshop", description: @description, address:"5 rue du sentier, 75002 PARIS", price: 40, capacity_min: 5, validity_date: Faker::Date.forward(30), category: "Indoor", photo: Faker::LoremPixel.image, user: User.all.sample, duration: "3h")
 
 
 booking1 = Booking.create!(date: Faker::Date.forward(30), number_of_participants: rand(1..15), user: user1, experience: Experience.all.sample)

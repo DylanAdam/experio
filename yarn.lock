@@ -2286,7 +2286,7 @@ express@^4.16.2:
     serve-static "1.13.2"
     setprototypeof "1.1.0"
     statuses "~1.4.0"
-    type-is "~1.6.16"
+    type-is "~1.6.16" 
     utils-merge "1.0.1"
     vary "~1.1.2"
 
@@ -2455,6 +2455,11 @@ find-up@^2.0.0, find-up@^2.1.0:
   integrity sha1-RdG35QbHF93UgndaK3eSCjwMV6c=
   dependencies:
     locate-path "^2.0.0"
+
+flatpickr@^4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.2.tgz#47c8ad472a096e5fb7e74b809b0703535383f20d"
+  integrity sha512-jDy4QYGpmiy7+Qk8QvKJ4spjDdxcx9cxMydmq1x427HkKWBw0qizLYeYM2F6tMcvvqGjU5VpJS55j4LnsaBblA==
 
 flatten@^1.0.2:
   version "1.0.2"
