@@ -6,7 +6,18 @@ class ExperiencePolicy < ApplicationPolicy
   end
 
   def show?
-    # record.user == user
     true
+  end
+
+  def create?
+    user ? true : false
+  end
+
+  def update?
+    record.user == user
+  end
+
+  def destroy?
+    record.user == user
   end
 end
