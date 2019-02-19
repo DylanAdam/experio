@@ -7,4 +7,8 @@ class ExperiencesController < ApplicationController
   def show
     @experiences = Experience.find(params[:id])
   end
+
+  def experiences_params
+  params.require(:experience).permit(:title, :description, :photo)
+end
 end

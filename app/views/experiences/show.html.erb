@@ -5,4 +5,6 @@
 <p><%= @experience.address %></p>
 <p><%= @experience.price %></p>
 
+<%= cl_image_tag @experience.photo, height: 300, width: 400, crop: :fill %>
+
 <%= image_tag "mock_map" %>

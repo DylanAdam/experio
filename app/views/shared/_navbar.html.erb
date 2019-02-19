@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to root_path, default: "Propose a new experience", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to new_experience_path, default: "Propose a new experience", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to root_path, default: "My bookings", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 

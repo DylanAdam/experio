@@ -21,3 +21,9 @@ booking3 = Booking.create!(date: Faker::Date.forward(30), number_of_participants
 review1 = Review.create!(description: Faker::Movies::StarWars.quote, rating: rand(0..5), booking: booking1)
 review2 = Review.create!(description: Faker::Movies::StarWars.quote, rating: rand(0..5), booking: booking2)
 review3 = Review.create!(description: Faker::Movies::StarWars.quote, rating: rand(0..5), booking: booking3)
+
+# Testing Photos Upload
+url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
+experience = Experience.new(title: 'Test', description: "The best experience")
+experience.remote_photo_url = url
+experience.save
