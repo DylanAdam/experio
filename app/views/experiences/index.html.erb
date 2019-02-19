@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <% @experiences.each do |experience| %>
+      
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
+            
+              <div class="card-description">
+                <h2><%= experience.title %></h2>
+                <p><%= experience.price %>€</p>
+            </div>    
+              <a class="card-link" href="/experiences/<%= experience.id %>" ></a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
