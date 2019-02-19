@@ -5,5 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :experiences
   has_many :bookings
-  validates :company, :first_name, :last_name, presence: true
 end
