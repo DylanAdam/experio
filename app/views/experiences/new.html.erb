@@ -1,15 +1,16 @@
-<div class="container">
+<div class="container new-form">
 
 <%= simple_form_for [@experience] do |f| %>
   <%= f.input :category %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.input :picture %>
   <%= f.input :address %>
   <%= f.input :price %>
   <%= f.input :duration %>
   <%= f.input :capacity_min %>
   <%= f.input :validity_date %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
 
   <%= f.submit "Create my experience", class: "btn btn-primary" %>
 <% end %>

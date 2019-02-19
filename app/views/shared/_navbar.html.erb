@@ -10,9 +10,10 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to new_experience_path, default: "Propose a new experience", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to root_path, default: "My bookings", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to "Propose an experience", new_experience_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "All experiences", experiences_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
