@@ -4,17 +4,42 @@
 
 <div class="container show-container">
   <div class="row">
+
     <div class="col-lg-8">
+
       <div class="info-card">
         <div class="info-title">
           <h1><%= @experience.title %></h1>
           <p><%= @experience.address %></p>
         </div>
-        <div class="price-duration">
-          <p><%= @experience.duration %></p>
-          <p><%= @experience.price %></p>
-          <p><%= @experience.capacity_min %></p>
-          <p><%= @experience.validity_date %></p>
+        <hr>
+        <div class="experience-reviews flex">
+          <i class="fas fa-star"></i>
+          <p><%= @experience.reviews.length %> avis</p>
+        </div>
+        <hr>
+
+        <div class="experience-infos flex">
+          <div class="infos">
+            <i class="far fa-clock"></i>
+            <p>DURATION</p>
+            <p><%= @experience.duration %></p>
+          </div>
+          <div class="infos">
+            <i class="fas fa-euro-sign"></i>
+            <p>PRICE / PERS.</p>
+            <p><%= @experience.price %></p>
+          </div>
+          <div class="infos">
+            <i class="far fa-user"></i>
+            <p>MIN PEOPLE</p>
+            <p><%= @experience.capacity_min %></p>
+          </div>
+          <div class="infos">
+            <i class="far fa-calendar-alt"></i>
+            <p>VALIDITY</p>
+            <p><%= @experience.validity_date %></p>
+          </div>
         </div>
       </div>
     </div>
@@ -22,11 +47,11 @@
     <div class="col-lg-4">
       <div class="booking-form form-group">
         <div class="form-title">
-          <h2>Book this experience</h2>
+          <h2>Book now</h2>
         </div>
         <div class="form-body">
-          <%= simple_form_for @booking do |f| %>
-            <div id="datetimepicker"><%= f.input :date %></div>
+          <%= simple_form_for @booking, authenticity_token: true do |f| %>
+            <%= f.text_field :date %>
             <%= f.input :number_of_participants %>
             <%= f.submit "Book your experience", class: "btn btn-primary" %>
           <% end %>
@@ -38,12 +63,13 @@
 
   <div class="description">
     <h2>A propos de <%= @experience.title %></h2>
-    <p><%= @experience.description %></p>
-  </div>
-
-  <div class="map">
-    <%= image_tag "mock_map" %>
+    <div class="description-content">
+      <p><%= @experience.description %></p>
+    </div>
   </div>
 
 </div>
 
+  <div class="map">
+    <%= image_tag "mock_map" %>
+  </div>
