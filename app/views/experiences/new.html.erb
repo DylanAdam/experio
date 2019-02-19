@@ -12,38 +12,26 @@
           Submit a new experience
         </span>
     <div class="wrap-input100 validate-input" data-validate="Title is required">
-          <span class="label-input100" >Your Title </span>
-          <input class="input100" type="text" :title="title" placeholder="Enter your title">
-          <span class="focus-input100"></span>
+          <span class="label-input100" > <%= f.input :title %> </span>
     </div>
+    <div class="wrap-input100 validate-input" data-validate = "Description is required">
+          <span class="label-input100"> <%= f.input :description %></span>
+          <span class="focus-input100"></span>
+        </div>
     <div class="wrap-input100 validate-input">
-          <span class="label-input100">Your Address</span>
-          <input class="input100" type="text" name="address" placeholder="Enter your address">
+          <span class="label-input100"> <%= f.input :address %></span>
           <span class="focus-input100"></span>
     </div>
         <div class="wrap-input100 input100-select">
-          <span class="label-input100">Your Category</span>
+          <span class="label-input100"> <%= f.input :category %></span>
           <div>
-            <select class="selection-2" name="category">
-              <option>Choose Category</option>
-              <option>Entertainment</option>
-              <option>Arts & Culture</option>
-              <option>Sports</option>
-              <option>Workshops</option>
-            </select>
           </div>
           <span class="focus-input100"></span>
         </div>
         <div class="wrap-input100 validate-input">
-          <span class="label-input100">Your Price</span>
-          <input class="input100" type="text" name="price" placeholder="What's your price per person ?">
+          <span class="label-input100"> <%= f.input :price %></span>
           <span class="focus-input100"></span>
     </div>
-        <div class="wrap-input100 validate-input" data-validate = "Description is required">
-          <span class="label-input100">Description</span>
-          <textarea class="input100" name="description" placeholder="Your description here..."></textarea>
-          <span class="focus-input100"></span>
-        </div>
         <span class="label-input100"><%= f.input :duration %></span>
         <span class="label-input100"><%= f.input :capacity_min %></span>
         <span class="label-input100"><%= f.input :validity_date %></span>
@@ -52,7 +40,7 @@
         <div class="container-contact100-form-btn">
           <div class="wrap-contact100-form-btn">
             <div class="contact100-form-bgbtn"></div>
-            <button class="contact100-form-btn">
+            <button f.submit class="contact100-form-btn">
               <span>
                 Create my experience
                 <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
@@ -63,7 +51,6 @@
       </form>
     </div>
   </div>
-
   </div>
 
 <% end %>
