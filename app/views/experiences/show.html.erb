@@ -25,7 +25,7 @@
 
   <div class="booking-form">
     <h2>Book this experience</h2>
-    <%= simple_form_for @booking do |f| %>
+    <%= simple_form_for [@experience, @booking] do |f| %>
       <%= f.input :date %>
       <%= f.input :number_of_participants %>
       <%= f.submit "Book your experience", class: "btn btn-primary" %>
