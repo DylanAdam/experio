@@ -12,64 +12,43 @@
           Submit a new experience
         </span>
     <div class="wrap-input100 validate-input" data-validate="Title is required">
-          <span class="label-input100">The title</span>
-          <%= f.input :title %>
-          <input class="input100" type="text" name="name" placeholder="Enter your title">
+          <span class="label-input100" >Your Title </span>
+          <input class="input100" type="text" :title="title" placeholder="Enter your title">
           <span class="focus-input100"></span>
-        </div>
-  <%= f.input :category %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.input :price %>
-  <%= f.input :duration %>
-  <%= f.input :capacity_min %>
-  <%= f.input :validity_date %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-
-<% end %>
-
-
-        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-          <span class="label-input100">Email</span>
-          <input class="input100" type="text" name="email" placeholder="Enter your email addess">
+    </div>
+    <div class="wrap-input100 validate-input">
+          <span class="label-input100">Your Address</span>
+          <input class="input100" type="text" name="address" placeholder="Enter your address">
           <span class="focus-input100"></span>
-        </div>
-
+    </div>
         <div class="wrap-input100 input100-select">
-          <span class="label-input100">Description</span>
+          <span class="label-input100">Your Category</span>
           <div>
-            <select class="selection-2" name="description">
+            <select class="selection-2" name="category">
               <option>Choose Category</option>
-              <option>Online Store</option>
-              <option>eCommerce Bussiness</option>
-              <option>UI/UX Design</option>
-              <option>Online Services</option>
+              <option>Entertainment</option>
+              <option>Arts & Culture</option>
+              <option>Sports</option>
+              <option>Workshops</option>
             </select>
           </div>
           <span class="focus-input100"></span>
         </div>
-
-        <div class="wrap-input100 input100-select">
-          <span class="label-input100">Budget</span>
-          <div>
-            <select class="selection-2" name="budget">
-              <option>Select Price per person</option>
-              <option>50 € </option>
-              <option>60 €</option>
-              <option>80 €</option>
-              <option>100 €</option>
-            </select>
-          </div>
+        <div class="wrap-input100 validate-input">
+          <span class="label-input100">Your Price</span>
+          <input class="input100" type="text" name="price" placeholder="What's your price per person ?">
+          <span class="focus-input100"></span>
+    </div>
+        <div class="wrap-input100 validate-input" data-validate = "Description is required">
+          <span class="label-input100">Description</span>
+          <textarea class="input100" name="description" placeholder="Your description here..."></textarea>
           <span class="focus-input100"></span>
         </div>
-
-        <div class="wrap-input100 validate-input" data-validate = "Message is required">
-          <span class="label-input100">Message</span>
-          <textarea class="input100" name="message" placeholder="Your message here..."></textarea>
-          <span class="focus-input100"></span>
-        </div>
-
+        <span class="label-input100"><%= f.input :duration %></span>
+        <span class="label-input100"><%= f.input :capacity_min %></span>
+        <span class="label-input100"><%= f.input :validity_date %></span>
+        <span class="label-input100"><%= f.input :photo %></span>
+        <span class="label-input100"><%= f.input :photo_cache, as: :hidden %></span>
         <div class="container-contact100-form-btn">
           <div class="wrap-contact100-form-btn">
             <div class="contact100-form-bgbtn"></div>
@@ -87,3 +66,4 @@
 
   </div>
 
+<% end %>
