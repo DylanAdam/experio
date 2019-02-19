@@ -4,9 +4,8 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3.4.0",
-    "flatpickr": "^4.5.2",
     "jquery": "^3.3.1",
-    "stimulus-flatpickr": "^1.0.0"
+    "typed.js": "^2.0.10"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"

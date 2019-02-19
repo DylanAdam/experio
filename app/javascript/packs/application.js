@@ -1,15 +1,15 @@
 import "bootstrap";
-const flatpickr = require("flatpickr");
 
-// ./packs/application.js
-import { Application } from "stimulus";
-// import Flatpickr
-import Flatpickr from "stimulus-flatpickr";
+import { loadDynamicBannerText } from '../components/banner.js';
 
-import { definitionsFromContext } from "stimulus/webpack-helpers";
-const application = Application.start();
-const context = require.context("../controllers", true, /\.js$/);
-application.load(definitionsFromContext(context));
+loadDynamicBannerText();
 
-// Manually register Flatpickr as a stimulus controller
-application.register("flatpickr", Flatpickr);
+
+$(function(){
+  $(".fancy-button").mousedown(function(){
+    $(this).bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
+        $(this).removeClass('active');
+    })
+     $(this).addClass("active");
+  });
+});
