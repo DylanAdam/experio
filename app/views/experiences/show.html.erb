@@ -1,16 +1,38 @@
-<div class="show-banner">
-  <div class="show-image" style="background-image: url('<%= @experience.picture %>');"></div>
+  <div id="show-banner">
+    <div class="show-image"></div>
+  </div>
+
+<div class="container show-container">
+  <div class="info-card">
+    <div class="info-title">
+      <h1><%= @experience.title %></h1>
+      <p><%= @experience.address %></p>
+    </div>
+    <div class="price-duration">
+      <p><%= @experience.duration %></p>
+      <p><%= @experience.price %></p>
+      <p><%= @experience.capacity_min %></p>
+      <p><%= @experience.validity_date %></p>
+    </div>
+  </div>
+
+  <div class="description">
+    <h2>A propos de <%= experience.title %></h2>
+    <p><%= @experience.description %></p>
+
+  </div>
+
+  <div class="booking-form">
+    <h2>Book this experience</h2>
+    <%= simple_form_for @booking do |f| %>
+      <%= f.input :date %>
+      <%= f.input :number_of_participants %>
+      <%= f.submit "Book your experience", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="map">
+    <%= image_tag "mock_map" %>
+  </div>
+
 </div>
-
-<div class="info-card">
-  <h1><%= @experience.title %></h1>
-  <p><%= @experience.description %></p>
-  <p><%= @experience.address %></p>
-  <p><%= @experience.price %></p>
-
-</div>
-
-<div class="map">
-  <%= image_tag "mock_map" %>
-</div>
-
