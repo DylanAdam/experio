@@ -3,4 +3,5 @@ class Experience < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
   validates :title, :description, :address, :picture, :price, :capacity_min, :validity_date, :category, presence: true
+  mount_uploader :photo, PhotoUploader
 end
