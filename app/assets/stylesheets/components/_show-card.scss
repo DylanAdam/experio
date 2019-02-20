@@ -5,7 +5,6 @@
   background-color: white;
   color: $dark-gray;
   border-radius: 5px;
-
   h1 {
    margin-top : 5px;
    margin-bottom: 10px;
@@ -13,11 +12,6 @@
   }
 }
 
-
-.info-card {
-  hr {
-  color: $dark-gray;
-  }
 .info-card hr {
   color: $dark-gray;
   border-top: 1px solid $gray;
@@ -29,13 +23,6 @@
 
 .description {
   color: $dark-gray;
-
-  h2 {
-    color: $blue;
-  }
-
-}
-
   border-radius: 5px;
   h2 {
     color: $blue;

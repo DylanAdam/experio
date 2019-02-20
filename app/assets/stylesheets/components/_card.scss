@@ -9,13 +9,17 @@ $cardHeight: 380px;
   padding: 80px;
 }
 
-.index {
+#map {
+  width: 50%;
+}
 
-  // justify-content: center;
-  // align-items: center;
+.container-index {
+
+  justify-content: space-between;
   height: 100vh;
   font-family: $body-font;
-  flex-direction: row;
+  display: flex;
+
 
 }
 
@@ -25,21 +29,7 @@ $cardHeight: 380px;
   margin-right: auto;
   margin-left: auto;
 }
-@media (min-width: 768px) {
-  .container-cards {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container-cards {
-    width: 1200px;
-  }
-}
-@media (min-width: 1200px) {
-  .container-cards {
-    width: 1600px;
-  }
-}
+
 
 .card {
   width: $cardWidth;
