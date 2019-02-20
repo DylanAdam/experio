@@ -1,5 +1,5 @@
   <div id="show-banner">
-    <div class="show-image"></div>
+    <div class="show-image"><%= cl_image_tag @experience.photo, height: 450, crop: :fill  %></div>
   </div>
 
 <div class="container show-container">
@@ -51,7 +51,7 @@
         </div>
         <div class="form-body">
           <%= simple_form_for [@experience, @booking] do |f| %>
-            <%= f.text_field :date %>
+            <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
             <%= f.input :number_of_participants %>
             <%= f.submit "Book your experience", class: "btn btn-primary" %>
           <% end %>
@@ -65,16 +65,6 @@
     <div class="description-content">
       <p><%= @experience.description %></p>
     </div>
-  </div>
-
-
-  <div class="booking-form">
-    <h2>Book this experience</h2>
-    <%= simple_form_for [@experience, @booking] do |f| %>
-      <%= f.input :date %>
-      <%= f.input :number_of_participants %>
-      <%= f.submit "Book your experience", class: "btn btn-primary" %>
-    <% end %>
   </div>
 
 </div>
