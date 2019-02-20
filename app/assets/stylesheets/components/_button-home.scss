@@ -1,6 +1,5 @@
-$button-width:120px;
+$button-width:150px;
 $button-height:45px;
-$button-color:lighten(crimson,5%);
 $button-font-size: 20px;
 
 $frill-vert-space:45px; //vertical spacing between frills
@@ -19,11 +18,10 @@ $timing-function:ease-out;
 
 
 .button {
-  background:$button-color;
+  background:$red;
   border-radius:5px;
   color:white;
-  cursor:pointer; 
-  font-family:Roboto;
+  cursor:pointer;
   font-size:$button-font-size;
   height:$button-height;
   line-height:$button-height;
@@ -34,15 +32,15 @@ $timing-function:ease-out;
 
 
   &:hover {
-    background:lighten($button-color,4%);
+    background:lighten($red,4%);
   }
   &:active {
-    box-shadow:inset 0px 2px 8px -1px darken($button-color,6%);
+    box-shadow:inset 0px 2px 8px -1px darken($red,6%);
   }
 }
 
 a:hover {
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 .fancy-button {
@@ -52,7 +50,7 @@ a:hover {
 }
 .frills, .frills:after, .frills:before {
   position:absolute;
-  background:$button-color;
+  background:$red;
   border-radius:($frill-height/2);
   height:$frill-height;
 }
@@ -72,22 +70,22 @@ a:hover {
   .active & {
      animation: move-left $speed $timing-function, width-to-zero $speed $timing-function;
   }
-  
+
   &:before, &:after {
     left:$frill-stagger;
-      
+
   }
   &:before {
     .active & {
-      animation: width-to-zero $speed $timing-function, move-up $speed $timing-function; 
+      animation: width-to-zero $speed $timing-function, move-up $speed $timing-function;
     }
   }
   &:after {
    .active & {
-      animation: width-to-zero $speed $timing-function, move-down $speed $timing-function; 
+      animation: width-to-zero $speed $timing-function, move-down $speed $timing-function;
    }
   }
-  
+
 }
 .right-frills {
   left:$button-width + $frill-horizontal-offset;
@@ -100,19 +98,19 @@ a:hover {
   }
   &:before {
    .active & {
-      animation: width-to-zero $speed $timing-function, move-up $speed $timing-function; 
+      animation: width-to-zero $speed $timing-function, move-up $speed $timing-function;
    }
   }
   &:after {
     .active & {
-      animation: width-to-zero $speed $timing-function, move-down $speed $timing-function; 
+      animation: width-to-zero $speed $timing-function, move-down $speed $timing-function;
     }
   }
 }
 
-.left-frills:before, .right-frills:after { 
+.left-frills:before, .right-frills:after {
   transform:rotate($frill-rotation)
-    
+
 }
 
 .left-frills:after, .right-frills:before {
@@ -151,7 +149,7 @@ a:hover {
 }
 @keyframes move-up {
   0% {
-    
+
   }
   100% {
     bottom:$frill-vert-space*1.55;
@@ -159,7 +157,7 @@ a:hover {
 }
 @keyframes move-down {
   0% {
-    
+
   }
   100% {
     top:$frill-vert-space*1.55;
