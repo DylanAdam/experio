@@ -1,5 +1,3 @@
-$orange: #f15826;
-$blue: #3066be;
 $yellow: #ffc807;
 $transition: all 0.3s ease;
 $cardWidth: 460px;
@@ -12,15 +10,13 @@ $cardHeight: 380px;
 
 }
 
-body {
+.index {
   
   // justify-content: center;
   // align-items: center;
   height: 100vh;
   font-family: 'Roboto', sans-serif;
-  background-image: linear-gradient(-180deg, #f1eeea 0%, #f2eeea 33%, #e6e3e0 100%);
   flex-direction: row;
-  background-color: #d8d8d8;
 }
 
 .container-cards {

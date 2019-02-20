@@ -1,3 +1,4 @@
+<div class="index">
 <div class="container-cards">
   <div class="row">
   
@@ -30,16 +31,19 @@
                 <br><br></div>
                <a class="button-cards" href="/experiences/<%= experience.id %>">Book Now</a>
               </div>
-            <% end %>
+            <% end %>  
           </div>
+        <% end %>
+
   <div
   id="map"
   style="width: 100%;
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  data-mapbox-api-key="<%#= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
+ -->
+</div>
 </div>
 
 

@@ -2,6 +2,7 @@ class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   def index
     @experiences = policy_scope(Experience).order(created_at: :desc)
+
     @experiences = Experience.where.not(latitude: nil, longitude: nil)
     @markers = @experiences.map do |experience|
       {
