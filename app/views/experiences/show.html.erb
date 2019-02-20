@@ -53,7 +53,7 @@
           <%= simple_form_for [@experience, @booking] do |f| %>
             <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
             <%= f.input :number_of_participants %>
-            <%= f.submit "Book your experience", class: "btn btn-primary" %>
+            <%= f.submit "Proceed to payment", class: "btn btn-primary button-show" %>
           <% end %>
         </div>
       </div>
