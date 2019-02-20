@@ -1,34 +1,48 @@
 <div>
-  <div>Upcoming experience</div>
+  <h1>Upcoming experience</h1>
   <div class="container">
     <div class="row">
       <% @bookings.each do |booking| %>
-      <% if booking.validity_date > Date.today %>
-      <% if booking.photo.present? %>
-      <% if booking.date > Date.today %>
-      <div class="col-xs-12 col-sm-4 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), <% if booking.experience.photo.present? %> url('<%= cl_image_path booking.experience.photo %>') <% else %> url('https://source.unsplash.com/random')<% end %>;">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2><%= booking.experience.title %></h2>
-            <p><%= booking.experience.price %></p>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+            <% if booking.experience.photo.present? %>
+            <div class="card__image" style="background-image: url('<%= cl_image_path booking.experience.photo %>');"></div>
+            <div class="card__player">
+              <div id="player"></div>
+            </div>
+            <div class="card__info">
+              <h2 class="title"><%= booking.experience.title %></h2>
+              <p class="genre"><%= booking.experience.category %></p>
+
+              <div class="desc">
+
+                <div class="rating">
+                   <p class="meta"><%= booking.experience.category %> ● <%= booking.experience.duration %></p>
+                  <div class="stars">
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt stars"></i>
+                    </div>
+                </div>
+                <p><%= booking.experience.description %></p>
+                </div>
+              </div>
+            <% end %>
           </div>
-        </div>
-      </div>
-      <% end %>
       <% end %>
     </div>
   </div>
 </div>
 
+
+<!--
 <div>
-  <div> What you've done</div>
+  <h1> What you've done</h1>
   <div class="container">
     <div class="row">
       <% @bookings.each do |booking| %>
-      <% if booking.validity_date < Date.today %>
-      <% if booking.photo.present? %>
-      <% if booking.date < Date.today %>
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), <% if booking.experience.photo.present? %> url('<%= cl_image_path booking.experience.photo %>') <% else %> url('https://source.unsplash.com/random')<% end %>;">
           <div class="card-category">Popular</div>
@@ -39,7 +53,6 @@
         </div>
       </div>
       <% end %>
-      <% end %>
     </div>
   </div>
-</div>
+</div> -->
