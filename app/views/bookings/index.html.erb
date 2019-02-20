@@ -3,12 +3,9 @@
   <div class="container">
     <div class="row">
       <% @bookings.each do |booking| %>
-<<<<<<< HEAD
       <% if booking.validity_date > Date.today %>
       <% if booking.photo.present? %>
-=======
       <% if booking.date > Date.today %>
->>>>>>> 745fdae8684389c71ec15dc3d6b38034bcb9f8b4
       <div class="col-xs-12 col-sm-4 col-md-3">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), <% if booking.experience.photo.present? %> url('<%= cl_image_path booking.experience.photo %>') <% else %> url('https://source.unsplash.com/random')<% end %>;">
           <div class="card-category">Popular</div>
@@ -29,12 +26,9 @@
   <div class="container">
     <div class="row">
       <% @bookings.each do |booking| %>
-<<<<<<< HEAD
       <% if booking.validity_date < Date.today %>
       <% if booking.photo.present? %>
-=======
       <% if booking.date < Date.today %>
->>>>>>> 745fdae8684389c71ec15dc3d6b38034bcb9f8b4
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), <% if booking.experience.photo.present? %> url('<%= cl_image_path booking.experience.photo %>') <% else %> url('https://source.unsplash.com/random')<% end %>;">
           <div class="card-category">Popular</div>
