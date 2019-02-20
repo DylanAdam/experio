@@ -5,7 +5,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 import { loadDynamicBannerText } from '../components/banner.js';
 
-// loadDynamicBannerText();
+ loadDynamicBannerText();
 
 
 $(function(){
