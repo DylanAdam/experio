@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new]
   def index
-    @bookings = policy_scope(Experience).where(user: current_user)
+    @bookings = policy_scope(Booking).where(user: current_user)
   end
 
   def new
@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.experience = Experience.find(params[:experience_id])
     @booking.user = current_user
-    @booking.save
+    @booking.save!
     redirect_to bookings_path
   end
 
