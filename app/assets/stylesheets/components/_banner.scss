@@ -1,7 +1,7 @@
 .banner {
-  color: white;
+  color: $light-gray;
   text-align: center;
-  height: 100vh;
+  height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -28,7 +28,7 @@
 
 .banner p {
   font-size: 35px;
-  color: white;
+  color: $light-gray;
   opacity: 1;
   margin-bottom: 30px;
   text-decoration: underline;
