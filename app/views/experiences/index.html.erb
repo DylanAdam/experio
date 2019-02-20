@@ -1,7 +1,7 @@
 <div class="container-index">
   <div class="container-cards">
     <div class="row">
-    
+
       <% @experiences.each do |experience| %>
 
           <div class="col-xs-12 col-sm-6">
@@ -25,17 +25,22 @@
                           <i class="fas fa-star-half-alt stars"></i>
                         </div>
                       </div>
-                      <p><%= experience.description %></p>
+                      <p><% if experience.description.split("").count > 50 %>
+                        <%= "#{experience.description[0..50]} ..."  %>
+                        <% else  %>
+                        <%= experience.description %>
+                        <% end %>
+                      </p>
                     </div>
                     <a class="button-cards" href="/experiences/<%= experience.id %>">Book Now</a>
                   </div>
                 </div>
-              <% end %>     
+              <% end %>
         </div>
       <% end %>
     </div>
   </div>
-  <div id="map" 
+  <div id="map"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
