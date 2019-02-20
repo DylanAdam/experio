@@ -1,20 +1,37 @@
-<div class="container">
+<div class="container-cards">
   <div class="row">
+  
     <% @experiences.each do |experience| %>
 
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
-
-              <div class="card-description">
-                <h2><%= experience.title %></h2>
-                <p><%= experience.price %>€</p>
+          <div class="card">
+            <% if experience.photo.present? %>
+            <div class="card__image" style="background-image: url('<%= cl_image_path experience.photo %>');"></div>
+            <div class="card__player">
+              <div id="player"></div>
             </div>
-              <a class="card-link" href="/experiences/<%= experience.id %>" ></a>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
+            <div class="card__info">
+              <h2 class="title"><%= experience.title %></h2>
+              <p class="genre"><%= experience.category %></p>
+              
+              <div class="desc">
+               
+                <div class="rating">
+                   <p class="meta"><%= experience.category %> ● <%= experience.duration %></p>
+                  <div class="stars">
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt stars"></i>
+                    </div>
+                </div>
+                <p><%= experience.description %></p>
+                <br><br></div>
+               <a class="button-cards" href="/experiences/<%= experience.id %>">Book Now</a>
+              </div>
+            <% end %>
+          </div>
   <div
   id="map"
   style="width: 100%;
@@ -24,5 +41,6 @@
   </div>
 
 </div>
+
 
 
