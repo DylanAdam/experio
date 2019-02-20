@@ -16,10 +16,10 @@ body, html {
 }
 
 /*---------------------------------------------*/
-a {
+.new-form > a {
   font-size: 14px;
   line-height: 1.7;
-  color: #666666;
+  color: black;
   margin: 0px;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
@@ -36,30 +36,30 @@ a:hover {
 }
 
 /*---------------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
-  margin: 0px;
+.form-control {
+  color: $blue;
 }
 
-p {
+.new-form > p {
   font-size: 14px;
   line-height: 1.7;
   color: #666666;
   margin: 0px;
 }
 
-ul, li {
+.new-form > ul, li {
   margin: 0px;
   list-style-type: none;
 }
 
 
 /*---------------------------------------------*/
-input {
+.new-form > input {
   outline: none;
   border: none;
 }
 
-textarea {
+.new-form > textarea {
   outline: none;
   border: none;
 }
@@ -89,7 +89,7 @@ textarea::-moz-placeholder { color: $gray;}
 textarea:-ms-input-placeholder { color: $gray;}
 
 /*---------------------------------------------*/
-button {
+.new-form > button {
   outline: none !important;
   border: none;
   background: transparent;
@@ -105,7 +105,7 @@ iframe {
 
 
 /*---------------------------------------------*/
-.container {
+.new-form .container {
   max-width: 1200px;
 }
 
