@@ -5,19 +5,18 @@ $cardHeight: 380px;
 
 * {
   box-sizing: border-box;
-
+  
   padding: 100px;
 
 }
 
 .index {
-
+  
   // justify-content: center;
   // align-items: center;
   height: 100vh;
-  font-family: $body-font;
+  font-family: 'Roboto', sans-serif;
   flex-direction: row;
-
 }
 
 .container-cards {
@@ -56,7 +55,7 @@ $cardHeight: 380px;
 
 .card__image {
   position: absolute;
-
+  
   background-size: cover;
   background-position: center center;
   width: 100%;
