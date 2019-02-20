@@ -7,20 +7,20 @@ $cardHeight: 380px;
 
 * {
   box-sizing: border-box;
-  
+
   padding: 100px;
 
 }
 
 body {
-  
+
   // justify-content: center;
   // align-items: center;
   height: 100vh;
-  font-family: 'Roboto', sans-serif;
+  font-family: $body-font;
   background-image: linear-gradient(-180deg, #f1eeea 0%, #f2eeea 33%, #e6e3e0 100%);
   flex-direction: row;
-  background-color: #d8d8d8;
+  background-color: $light-gray;
 }
 
 .container-cards {
@@ -59,7 +59,7 @@ body {
 
 .card__image {
   position: absolute;
-  
+
   background-size: cover;
   background-position: center center;
   width: 100%;
