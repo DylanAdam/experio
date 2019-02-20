@@ -13,6 +13,10 @@ class ExperiencesController < ApplicationController
 
   def show
     @experience = Experience.find(params[:id])
+    @marker = {
+        lng: @experience.longitude,
+        lat: @experience.latitude
+      }
     @booking = Booking.new
     authorize @experience
   end
