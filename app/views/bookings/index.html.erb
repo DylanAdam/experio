@@ -1,20 +1,18 @@
 <div>
   <div>Upcoming experience</div>
-    <div class="container">
+  <div class="container">
     <div class="row">
       <% @bookings.each do |booking| %>
-      <% if booking.validity_date > Date.today %>
-      <% if booking.picture.present? %>
+      <% if booking.date > Date.today %>
       <div class="col-xs-12 col-sm-4 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), <% if booking.experience.photo.present? %> url('<%= cl_image_path booking.experience.photo %>') <% else %> url('https://source.unsplash.com/random')<% end %>;">
           <div class="card-category">Popular</div>
           <div class="card-description">
-            <h2><%= booking.title %></h2>
-            <p><%= booking.price %></p>
+            <h2><%= booking.experience.title %></h2>
+            <p><%= booking.experience.price %></p>
           </div>
         </div>
       </div>
-      <% end %>
       <% end %>
       <% end %>
     </div>
@@ -26,18 +24,16 @@
   <div class="container">
     <div class="row">
       <% @bookings.each do |booking| %>
-      <% if booking.validity_date < Date.today %>
-      <% if booking.picture.present? %>
+      <% if booking.date < Date.today %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), <% if booking.experience.photo.present? %> url('<%= cl_image_path booking.experience.photo %>') <% else %> url('https://source.unsplash.com/random')<% end %>;">
           <div class="card-category">Popular</div>
           <div class="card-description">
-            <h2><%= booking.title %></h2>
-            <p><%= booking.price %></p>
+            <h2><%= booking.experience.title %></h2>
+            <p><%= booking.experience.price %></p>
           </div>
         </div>
       </div>
-      <% end %>
       <% end %>
       <% end %>
     </div>
