@@ -1,11 +1,13 @@
 import "bootstrap";
 import "../plugins/flatpickr"
 import 'mapbox-gl/dist/mapbox-gl.css'
-import { initMapbox } from '../plugins/init_mapbox';
 
-import { loadDynamicBannerText } from '../components/banner.js';
+import { initMapbox } from '../plugins/init_mapbox'
+import { loadDynamicBannerText } from '../components/banner.js'
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 
-// loadDynamicBannerText();
+
+ loadDynamicBannerText();
 
 
 $(function(){
@@ -17,14 +19,10 @@ $(function(){
   });
 });
 
-
-
-
 var player
 var onTimer
 var offTimer
 var card = document.querySelector('.card')
-
 
 // Player funtions
 function onPlayerReady (event) {
@@ -66,25 +64,26 @@ function initPlayer () {
   })
 }
 
+loadDynamicBannerText();
+initMapbox();
 
 // Hover
-card.addEventListener('mouseenter', function (event) {
-  clearTimeout(offTimer)
-  onTimer = setTimeout(function () {
-    initPlayer()
-  }, 300)
-})
+if (card)
+  {card.addEventListener('mouseenter', function (event) {
+    clearTimeout(offTimer)
+    onTimer = setTimeout(function () {
+      initPlayer()
+    }, 300)
+  })}
 
-card.addEventListener('mouseleave', function (event) {
+if (card)
+{card.addEventListener('mouseleave', function (event) {
   clearTimeout(onTimer)
   card.classList.remove('--active')
   offTimer = setTimeout(function () {
     player.destroy()
     player = ''
   }, 300)
-})
+})}
 
  // <-- you need to uncomment the stylesheet_pack_tag in the layout!
-
-initMapbox();
-

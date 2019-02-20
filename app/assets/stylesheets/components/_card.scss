@@ -1,5 +1,3 @@
-$orange: #f15826;
-$blue: #3066be;
 $yellow: #ffc807;
 $transition: all 0.3s ease;
 $cardWidth: 460px;
@@ -7,20 +5,18 @@ $cardHeight: 380px;
 
 * {
   box-sizing: border-box;
-  
   padding: 100px;
-
+  padding: 80px;
 }
 
-body {
-  
+.index {
+
   // justify-content: center;
   // align-items: center;
   height: 100vh;
-  font-family: 'Roboto', sans-serif;
-  background-image: linear-gradient(-180deg, #f1eeea 0%, #f2eeea 33%, #e6e3e0 100%);
+  font-family: $body-font;
   flex-direction: row;
-  background-color: #d8d8d8;
+
 }
 
 .container-cards {
@@ -59,7 +55,7 @@ body {
 
 .card__image {
   position: absolute;
-  
+
   background-size: cover;
   background-position: center center;
   width: 100%;
@@ -109,10 +105,13 @@ body {
     font-size: 30px;
     font-weight: bold;
     position: relative;
-    padding-bottom: 0.4rem;
+    // padding-bottom: 0.4rem;
     padding-left: 10px;
     z-index: 200;
     transition: $transition;
+    margin-top: 15px;
+    margin-bottom: 5px;
+
 
     &:after {
       position: absolute;
@@ -130,7 +129,7 @@ body {
 
   .genre {
     color: #b3b7b9;
-    margin-top: 0.4rem;
+    margin-top: 0.2rem;
     padding-left: 10px;
     font-size: 15px;
     transition: $transition;
@@ -140,7 +139,7 @@ body {
     background: white;
     margin-top: 10px;
     color: #78848e;
-    padding: 20px 20px;
+    padding: 31px 20px;
     font-size: 15px;
     transition: $transition;
     transform: translateY(20px);
