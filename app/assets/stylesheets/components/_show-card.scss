@@ -4,6 +4,8 @@
   margin-bottom: 20px;
   background-color: white;
   color: $dark-gray;
+  border-radius: 5px;
+
   h1 {
    margin-top : 5px;
    margin-bottom: 10px;
@@ -11,18 +13,37 @@
   }
 }
 
+
 .info-card {
   hr {
   color: $dark-gray;
   }
+.info-card hr {
+  color: $dark-gray;
+  border-top: 1px solid $gray;
+}
+
+.info-card i {
+  color: $red;
 }
 
 .description {
   color: $dark-gray;
+
   h2 {
     color: $blue;
   }
 
+}
+
+  border-radius: 5px;
+  h2 {
+    color: $blue;
+  }
+}
+
+.description-content {
+  border-radius: 5px;
 }
 
 .col-lg-8 {
@@ -38,6 +59,8 @@
   padding: 15px;
   height: 120px;
   text-align: center;
+  border-radius: 5px 5px 0px 0px;
+
 }
 
 .form-body {
@@ -57,9 +80,9 @@
  justify-content: space-between;
  text-align: center;
  padding: 5px 20px;
-
 }
 
 .experience-reviews p {
  margin-left: 10px;
+ margin-bottom: 5px;
 }
