@@ -10,13 +10,13 @@ $cardHeight: 380px;
 }
 
 #map {
-  width: 50%;
+  width: 28%;
 }
 
 .container-index {
 
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
   font-family: $body-font;
   display: flex;
 
@@ -25,10 +25,11 @@ $cardHeight: 380px;
 
 .container-cards {
     padding-top: 21px;
-    padding-right: 100px;
-    padding-left: 137px;
+    padding-right: 40px;
+    padding-left: 40px;
     margin-right: auto;
     margin-left: auto;
+    width: 72%;
 }
 
 
