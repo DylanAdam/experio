@@ -4,7 +4,7 @@
     <div class="row">
       <% @bookings.each do |booking| %>
       <% if booking.validity_date > Date.today %>
-      <% if booking.picture.present? %>
+      <% if booking.photo.present? %>
       <div class="col-xs-12 col-sm-4 col-md-3">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
           <div class="card-category">Popular</div>
@@ -27,7 +27,7 @@
     <div class="row">
       <% @bookings.each do |booking| %>
       <% if booking.validity_date < Date.today %>
-      <% if booking.picture.present? %>
+      <% if booking.photo.present? %>
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random');">
           <div class="card-category">Popular</div>
