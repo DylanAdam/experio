@@ -18,9 +18,12 @@ gem 'uglifier'
 gem 'webpacker'
 gem "pundit"
 
-#Image Uploads
+# Image Uploads
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+
+# Map
+gem "geocoder"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
