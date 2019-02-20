@@ -5,6 +5,7 @@
       
         <div class="col-xs-12 col-sm-4">
           <div class="card">
+            <% if experience.photo.present? %>
             <div class="card__image" style="background-image: url('<%= cl_image_path experience.photo %>');"></div>
             <div class="card__player">
               <div id="player"></div>
@@ -18,19 +19,20 @@
                 <div class="rating">
                    <p class="meta"><%= experience.category %> ● <%= experience.duration %></p>
                   <div class="stars">
-                    <i class="material-icons">star_rate</i>
-                    <i class="material-icons">star_rate</i>
-                    <i class="material-icons">star_rate</i>
-                    <i class="material-icons">star_rate</i>
-                    <i class="material-icons">star_rate</i>
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt stars"></i>
                     </div>
                 </div>
                 <p><%= experience.description %></p>
                 <br><br></div>
-               <a class="button-cards" href="#">&#9658; Book Now</a>
-            </div>
+               <a class="button-cards" href="/experiences/<%= experience.id %>">Book Now</a>
+              </div>
+            <% end %>
           </div>
-          </div>
+        </div>
     <% end %>
   </div>
 </div>

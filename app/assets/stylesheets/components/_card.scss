@@ -1,5 +1,5 @@
 $orange: #f15826;
-$blue: #00bcd4;
+$blue: #3066be;
 $yellow: #ffc807;
 $transition: all 0.3s ease;
 $cardWidth: 460px;
@@ -169,7 +169,7 @@ body {
       transform: translateY(-3px);
 
       &:last-child {
-        color: #e0e0e0;
+        color: $yellow;
       }
 
     }
@@ -245,3 +245,12 @@ body {
   }
 
 }
+
+.fasfa-star  {
+  color: $yellow;
+}
+
+.fasfa-star-half-alt {
+  color: $yellow;
+}
+
