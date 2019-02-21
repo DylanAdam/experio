@@ -9,33 +9,42 @@
     <div class="wrap-contact100">
       <form class="contact100-form validate-form">
         <span class="contact100-form-title">
-          Submit a new experience
+          Submit a new experience ✨
         </span>
-    <div class="wrap-input100 validate-input" data-validate="Title is required">
-          <span class="label-input100" > <%= f.input :title %> </span>
+    <div class="label-input100" data-validate="Title is required">
+    <%= f.input :title %>
     </div>
-    <div class="wrap-input100 validate-input" data-validate = "Description is required">
-          <span class="label-input100"> <%= f.input :description %></span>
+    <div validate-input" data-validate = "Description is required" class="label-input100"> <%= f.input :description %>
           <span class="focus-input100"></span>
         </div>
-    <div class="wrap-input100 validate-input">
-          <span class="label-input100"> <%= f.input :address %></span>
+    <div class="label-input100" validate-input">
+          <%= f.input :address %>
           <span class="focus-input100"></span>
     </div>
-        <div class="wrap-input100 input100-select">
-          <span class="label-input100"> <%= f.input :category %></span>
-          <div>
-          </div>
+        <div class="label-input100" validate-input">
+        <%= f.input :category, collection: [ "Indoor", "Outdoor", "Sports", "Art", "Entertainment"] %>
           <span class="focus-input100"></span>
         </div>
-        <div class="wrap-input100 validate-input">
-          <span class="label-input100"> <%= f.input :price %></span>
+        <div class="label-input100" validate-input">
+          <%= f.input :price %>
           <span class="focus-input100"></span>
     </div>
-        <span class="label-input100"><%= f.input :duration %></span>
-        <span class="label-input100"><%= f.input :capacity_min %></span>
-        <span class="label-input100"><%= f.input :validity_date, as: :string, required: false, input_html: {class: "datepicker"} %></span>
-        <span class="label-input100"><%= f.input :photo %></span>
+    <div class="label-input100" validate-input">
+          <%= f.input :duration %>
+          <span class="focus-input100"></span>
+    </div>
+    <div class="label-input100" validate-input">
+          <%= f.input :capacity_min%>
+          <span class="focus-input100"></span>
+    </div>
+        <div class="label-input100" validate-input">
+          <%= f.input :validity_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <span class="focus-input100"></span>
+    </div>
+    <div class="label-input100" validate-input">
+          <%= f.input :photo%>
+          <span class="focus-input100"></span>
+    </div>
         <span class="label-input100"><%= f.input :photo_cache, as: :hidden %></span>
         <div class="container-contact100-form-btn">
           <div class="wrap-contact100-form-btn">
