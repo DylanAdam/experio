@@ -1,1 +1,139 @@
 // Specific CSS for your home-page
+header {
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background-image: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+  }
+  header video {
+    display: none;
+  }
+}
+
+.wrapper-1 {
+	min-height: 500px;
+    margin: 20px;
+    padding:20px; 
+    background-size: cover;  
+}
+
+.container-1 {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  flex-direction: column;
+  display: flex;
+  margin-top: 133px;
+}
+@media (min-width: 768px) {
+  .container-1{
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container-1 {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-1 {
+    width: 1170px;
+  }
+}
+
+.container-1 h2 {
+   color: white;
+   font-family: $body-font;
+   display: flex;
+    
+   justify-content: center;
+}
+
+.container-1 p {
+	color: white;
+	font-family: $body-font;
+	text-align: center;
+}
+
+.home1 {
+	width: 830px;
+}
+
+.container-2 {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+}
+@media (min-width: 768px) {
+  .container-2{
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container-2 {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-2 {
+    width: 1170px;
+  }
+}
+
+.wrapper-2 {
+	min-height: 500px;
+    margin: 20px;
+    padding:20px; 
+    background-color: $dark-gray;  
+    display: flex;
+    flex-direction: row;
+}
+
+.img-home {
+	height: auto;
+	width:600px;
+	background-image: url('https://images.unsplash.com/photo-1520911544319-dae550e93e53?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+	background-size:cover;
+}

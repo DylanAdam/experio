@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new]
+  skip_before_action :authenticate_user!, only: [:new, :delete]
   def index
     @mybookings = policy_scope(Booking).where(user: current_user)
     @bookings_as_owner = current_user.bookings_as_owner
@@ -22,6 +22,13 @@ class BookingsController < ApplicationController
     else
       render "experiences/show"
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    # Penser a renvoyer vers la home page !! (Alex)
+    redirect_to root_path
   end
 
   private
