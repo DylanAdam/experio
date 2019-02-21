@@ -1,0 +1,13 @@
+#search-bar{
+  justify-content: center;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+#search-bar-form{
+  width: 98%;
+}
+
+#search-bar-text-field{
+  border-color: $blue;
+}
