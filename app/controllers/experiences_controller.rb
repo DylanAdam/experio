@@ -36,7 +36,7 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new(experiences_params)
     authorize @experience
     @experience.user = current_user
-    if @experience.save!
+    if @experience.save
       redirect_to experience_path(@experience)
     else
       render :new
