@@ -46,15 +46,19 @@ class ExperiencesController < ApplicationController
   def update
     @experience.update(experiences_params)
     authorize @experience
-    redirect_to experiences_path
+    redirect_to experience_path(@experience)
   end
 
-  def destroy
-    @experience.destroy
-    authorize @experience
-    # Penser a renvoyer vers la home page !! (Alex)
-    redirect_to
-  end
+  # def destroy
+  #   @experience.destroy
+  #   authorize @experience
+  #   @experience.user = current_user
+  #   if @experience.destroy!
+  #   # Penser a renvoyer vers la home page !! (Alex)
+  #   redirect_to root_path
+  #   else
+  #   redirect_to experience_path(@experience)
+  # end
 
   private
 
