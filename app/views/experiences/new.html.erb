@@ -34,7 +34,7 @@
     </div>
         <span class="label-input100"><%= f.input :duration %></span>
         <span class="label-input100"><%= f.input :capacity_min %></span>
-        <span class="label-input100"><%= f.input :validity_date %></span>
+        <span class="label-input100"><%= f.input :validity_date, as: :string, required: false, input_html: {class: "datepicker"} %></span>
         <span class="label-input100"><%= f.input :photo %></span>
         <span class="label-input100"><%= f.input :photo_cache, as: :hidden %></span>
         <div class="container-contact100-form-btn">
