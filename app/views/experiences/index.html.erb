@@ -1,46 +1,58 @@
 <div class="container-index">
   <div class="container-cards">
-    <div class="row">
 
-      <% @experiences.each do |experience| %>
+    <div id="search-bar">
+      <%= form_tag experiences_path, method: :get ,id: "search-bar-form" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+        id: "search-bar-text-field",
+        placeholder: "Find your experience ..."
+        %>
+        <% end %>
+      </div>
 
-      <div class="col-xs-12 col-sm-6">
-        <% if experience.photo.present? %>
-        <div class="card" >
-          <div class="card__image" style="background-image: url('<%= cl_image_path experience.photo %>');"></div>
-          <div class="card__player">
-            <div id="player"></div>
-          </div>
-          <div class="card__info">
-            <div class="title-container">
-              <h2 class="title fix-bottom"><%= experience.title %></h2>
+      <div class="row">
+
+        <% @experiences.each do |experience| %>
+
+        <div class="col-xs-12 col-sm-6">
+          <% if experience.photo.present? %>
+          <div class="card" >
+            <div class="card__image" style="background-image: url('<%= cl_image_path experience.photo %>');"></div>
+            <div class="card__player">
+              <div id="player"></div>
             </div>
-            <p class="genre"><%= experience.category %></p>
-            <div class="desc">
-              <div class="rating">
-                <p class="meta"><%= experience.category %> ● <%= experience.duration %></p>
-                <div class="stars">
-                  <i class="fas fa-star stars"></i>
-                  <i class="fas fa-star stars"></i>
-                  <i class="fas fa-star stars"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt stars"></i>
-                </div>
+            <div class="card__info">
+              <div class="title-container">
+                <h2 class="title fix-bottom"><%= experience.title %></h2>
               </div>
-              <p class="text-autocrop"> <%= experience.description %> </p>
+              <p class="genre"><%= experience.category %></p>
+              <div class="desc">
+                <div class="rating">
+                  <p class="meta"><%= experience.category %> ● <%= experience.duration %></p>
+                  <div class="stars">
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star stars"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt stars"></i>
+                  </div>
+                </div>
+                <p class="text-autocrop"> <%= experience.description %> </p>
+              </div>
+              <a class="button-cards" href="/experiences/<%= experience.id %>">Book Now</a>
             </div>
-            <a class="button-cards" href="/experiences/<%= experience.id %>">Book Now</a>
           </div>
+          <% end %>
         </div>
         <% end %>
       </div>
-      <% end %>
     </div>
+    <div id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <div id="map"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
 </div>
 
 
