@@ -1,7 +1,8 @@
 class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   def index
-    @experiences = policy_scope(Experience).order(created_at: :desc)
+    skip_policy_scope
+    @experiences = Experience.all
     if params[:query].present?
       @experiences = Experience.search_by_title_description_address_and_category(params[:query]).where.not(latitude: nil, longitude: nil)
     else
@@ -33,6 +34,12 @@ class ExperiencesController < ApplicationController
   def edit
     @experience = Experience.find(params[:id])
     authorize @experience
+  end
+
+  def manage
+    @experiences = policy_scope(Experience).order(created_at: :desc)
+    #@experiences = Experience.where
+    #authorize @experiences
   end
 
   def create
