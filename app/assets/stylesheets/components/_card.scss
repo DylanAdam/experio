@@ -1,6 +1,6 @@
 $yellow: #ffc807;
 $transition: all 0.3s ease;
-$cardWidth: 460px;
+$cardWidth: auto;
 $cardHeight: 380px;
 
 * {
@@ -10,7 +10,7 @@ $cardHeight: 380px;
 }
 
 #map {
-  width: 28%;
+  width: 35%;
 }
 
 .container-index {
@@ -24,12 +24,12 @@ $cardHeight: 380px;
 }
 
 .container-cards {
-    padding-top: 21px;
-    padding-right: 40px;
-    padding-left: 40px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 72%;
+  padding-top: 21px;
+  padding-right: 40px;
+  padding-left: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 72%;
 }
 
 
@@ -108,7 +108,7 @@ $cardHeight: 380px;
     &:after {
       position: absolute;
       content: "";
-      bottom: 0px;
+      bottom: -8px;
       left: 10px;
       width: 60px;
       height: 3px;
@@ -131,7 +131,7 @@ $cardHeight: 380px;
     background: white;
     margin-top: 10px;
     color: #78848e;
-    padding: 31px 20px;
+    padding: 31px 20px 15px 20px;
     font-size: 15px;
     transition: $transition;
     transform: translateY(20px);
@@ -245,3 +245,19 @@ $cardHeight: 380px;
   color: $yellow;
 }
 
+.title-container{
+  position: relative;
+  width: 100%;
+  height: 45px;
+}
+
+.text-autocrop {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.fix-bottom {
+  bottom: 0px;
+  position: absolute !important;
+}
