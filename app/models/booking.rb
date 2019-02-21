@@ -4,7 +4,7 @@ class Booking < ApplicationRecord
   has_one :review
   validates :date, presence: true
   validates :number_of_participants, presence: true
-  validates :number_of_participants, inclusion: { in: 1..50 }
+  validates :number_of_participants, inclusion: { in: 1..1000 }
   validate :number_of_participants_sup_experience_min_participant
   validate :booking_date_sup_today
   validate :booking_date_inf_validity_date
