@@ -1,60 +1,103 @@
-  <h1 class="text-center">Your experiences</h1>
-<div class="container-index">
-  <div class="container-cards">
-    <div class="row">
-      <% @bookings.each do |booking| %>
+<div class="booking-menu-wrapper wrapper">
+  <div class="booking-header container">
+    <ul class="tabs flex">
+      <li class="tab my-bookings-head active">My bookings</li>
+      <li class="tab bookings-as-owner-head">Bookings for my experiences</li>
+    </ul>
+  </div>
+</div>
 
-      <div class="col-xs-12 col-sm-4">
-        <% if booking.experience.photo.present? %>
-        <div class="card" >
-          <div class="card__image" style="background-image: url('<%= cl_image_path booking.experience.photo %>');"></div>
-          <div class="card__player">
-            <div id="player"></div>
-          </div>
-          <div class="card__info">
-            <h2 class="title"><%= booking.experience.title %></h2>
-            <p class="genre"><%= booking.experience.category %></p>
-            <div class="desc">
-              <div class="rating">
-                <p class="meta"><%= booking.experience.category %> ● <%= booking.experience.duration %></p>
-                <div class="stars">
-                  <i class="fas fa-star stars"></i>
-                  <i class="fas fa-star stars"></i>
-                  <i class="fas fa-star stars"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt stars"></i>
-                </div>
+<div class="booking-wrapper wrapper">
+  <div class="booking-cards container">
+
+    <div class="row">
+
+      <div class="my-bookings bookings">
+        <% @mybookings.each do |booking| %>
+        <div class="booking flex">
+          <div class="booking-image" style="background-image: url('<%= cl_image_path booking.experience.photo %>');"></div>
+          <div class="booking-user block">
+            <h3><%= booking.experience.title %></h3>
+            <p><%= booking.experience.address %></p>
+            <div class="experience-infos flex">
+              <div class="infos">
+                <i class="far fa-clock"></i>
+                <p>DURATION</p>
+                <p><%= booking.experience.duration %></p>
               </div>
-              <p><%= booking.experience.description %></p>
+              <div class="infos">
+                <i class="fas fa-euro-sign"></i>
+                <p>PRICE / PERS.</p>
+                <p><%= booking.experience.price %></p>
+              </div>
+              <div class="infos">
+                <i class="far fa-user"></i>
+                <p>MIN PEOPLE</p>
+                <p><%= booking.experience.capacity_min %></p>
+              </div>
+              <div class="infos">
+                <i class="far fa-calendar-alt"></i>
+                <p>VALIDITY</p>
+                <p><%= booking.experience.validity_date %></p>
+              </div>
             </div>
-            <a class="button-cards" href="/experiences/<%= booking.experience.id %>">Book Now</a>
+          </div>
+          <div class="booking-infos block">
+            <div class="booking-status"><%= booking.status %></div>
+            <p><%= booking.date %></p>
+            <p><%= booking.number_of_participants %></p>
           </div>
         </div>
         <% end %>
       </div>
 
-      <% end %>
     </div>
+
+    <div class="row">
+      <div class="bookings-as-owner bookings hidden">
+        <% @bookings_as_owner.each do |booking| %>
+        <div class="booking flex">
+          <div class="booking-image" style="background-image: url('<%= cl_image_path booking.experience.photo %>');"></div>
+          <div class="booking-user block">
+            <h3><%= booking.experience.title %></h3>
+            <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+            <p><%= booking.user.company %></p>
+          </div>
+          <div class="booking-infos block">
+            <div class="booking-status"><%= booking.status %></div>
+            <div class="infos">
+              <i class="far fa-calendar-alt"></i>
+              <p><%= booking.date %></p>
+            </div>
+            <div class="infos">
+              <i class="far fa-user"></i>
+              <p><%= booking.number_of_participants %></p>
+            </div>
+            <div class="action flex">
+              <div class="fancy-button">
+                <div class="left-frills frills"></div>
+                <%= link_to experiences_path do %>
+                <div class="button">Accept</div>
+                <% end %>
+                <div class="right-frills frills"></div>
+              </div>
+              <div class="fancy-button">
+                <div class="left-frills frills"></div>
+                <%= link_to experiences_path do %>
+                <div class="button">Decline</div>
+                <% end %>
+                <div class="right-frills frills"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+    </div>
+
   </div>
 </div>
 
 
-<!--
-<div>
-  <h1> What you've done</h1>
-  <div class="container">
-    <div class="row">
-      <% @bookings.each do |booking| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), <% if booking.experience.photo.present? %> url('<%= cl_image_path booking.experience.photo %>') <% else %> url('https://source.unsplash.com/random')<% end %>;">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2><%= booking.experience.title %></h2>
-            <p><%= booking.experience.price %></p>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div> -->
+
