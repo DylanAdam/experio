@@ -2,8 +2,11 @@ class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
   def index
     @experiences = policy_scope(Experience).order(created_at: :desc)
-
-    @experiences = Experience.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @experiences = Experience.search_by_title_description_address_and_category(params[:query]).where.not(latitude: nil, longitude: nil)
+    else
+      @experiences = Experience.where.not(latitude: nil, longitude: nil)
+    end
     @markers = @experiences.map do |experience|
       {
         lng: experience.longitude,
@@ -15,9 +18,9 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find(params[:id])
     @marker = {
-        lng: @experience.longitude,
-        lat: @experience.latitude
-      }
+      lng: @experience.longitude,
+      lat: @experience.latitude
+    }
     @booking = Booking.new
     authorize @experience
   end
