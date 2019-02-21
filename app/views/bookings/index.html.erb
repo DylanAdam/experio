@@ -29,6 +29,7 @@
                 </div>
                 <p class="text-autocrop"> <%= booking.experience.description %> </p>
               </div>
+              <a class="button-cards" href="/experiences/<%= booking.experience.id %>">Book Now</a>
             </div>
           </div>
           <% end %>
@@ -47,7 +48,8 @@
     <div class="row">
       <% @bookings.each do |booking| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), <% if booking.experience.photo.present? %> url('<%= cl_image_path booking.experience.photo %>') <% else %> url('https://source.unsplash.com/random')<% end %>;">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), <% if 
+    ing.experience.photo.present? %> url('<%= cl_image_path booking.experience.photo %>') <% else %> url('https://source.unsplash.com/random')<% end %>;">
           <div class="card-category">Popular</div>
           <div class="card-description">
             <h2><%= booking.experience.title %></h2>
