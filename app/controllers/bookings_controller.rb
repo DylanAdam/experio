@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.experience = @experience
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path
+      redirect_to experience_booking_payement_path(@experience, @booking)
     else
       render "experiences/show"
     end
@@ -28,6 +28,11 @@ class BookingsController < ApplicationController
     @booking.destroy
     # Penser a renvoyer vers la home page !! (Alex)
     redirect_to root_path
+  end
+
+  def payement
+    @booking = Booking.find(params[:booking_id])
+    authorize @booking
   end
 
   private
