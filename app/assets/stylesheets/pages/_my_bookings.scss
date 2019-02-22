@@ -1,14 +1,16 @@
 .booking {
   width: 100%;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
-  border: 1px solid black;
 }
 
 .booking-image {
   width: 200px;
   height: 200px;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
 }
 
+.booking-image {
+  border-radius: 5px;
+}
