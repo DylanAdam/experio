@@ -1,15 +1,21 @@
 .booking-menu-wrapper {
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin-top: 0px;
+  
 }
 
 .tabs {
-  height: 30px;
+  height: 70px;
   justify-content: center;
+  display: flex;
+  border-radius: 10px 10px 0 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 .tabs ul {
-  margin: 20px;
+  margin-bottom: 0px;
+  height: 0px;
+
 }
 
 .tabs  li {
@@ -17,4 +23,18 @@
   font-size: 26px;
   padding: 20px 40px;
   cursor: pointer;
+  background-color: $light-gray;
+  margin-bottom: 0px;
+  border-style: solid;
+  border-color: $gray;
+  border-width: 1px;
+  border-radius: 10px 10px 0 0;
+}
+
+.tabs  li.active {
+  color: $blue;
+  font-size: 26px;
+  padding: 20px 40px;
+  cursor: pointer;
+  background-color: white;
 }
