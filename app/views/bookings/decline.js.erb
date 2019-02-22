@@ -1,0 +1,5 @@
+function decline(innerHTML) {
+  const bookingStatus = document.querySelector("[data-booking-id='<%= @booking.id %>']");
+  bookingStatus.innerHTML = "decline";
+}
+  decline('<%= j render "bookings/status", booking: @booking %>');

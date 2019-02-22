@@ -11,6 +11,11 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def edit
+    @booking = Booking.find(params[:booking_id])
+    authorize @booking
+  end
+
   def create
     @booking = Booking.new(booking_params)
     authorize @booking
@@ -37,6 +42,25 @@ class BookingsController < ApplicationController
   end
 
   def accept
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = "accepted"
+    @booking.save
+    respond_to do |format|
+      format.html { redirect_to bookings_path }
+      format.js # <-- will render `app/views/reviews/create.js.erb`
+    end
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = "declined"
+    @booking.save
+    respond_to do |format|
+      format.html { redirect_to bookings_path }
+      format.js # <-- will render `app/views/reviews/create.js.erb`
+    end
   end
 
   private

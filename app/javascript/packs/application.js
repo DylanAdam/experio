@@ -6,7 +6,6 @@ import { initMapbox } from '../plugins/init_mapbox'
 import { loadDynamicBannerText } from '../components/banner.js'
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import { selectTab } from '../components/tab.js'
-import { changeStatus } from '../components/status.js'
 
 
 $(function(){
@@ -380,4 +379,3 @@ securitycode.addEventListener('focus', function () {
 
  // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 selectTab();
-changeStatus();

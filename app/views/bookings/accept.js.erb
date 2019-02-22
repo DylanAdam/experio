@@ -1,0 +1,6 @@
+function accept(innerHTML) {
+  const bookingStatus = document.querySelector("[data-booking-id='<%= @booking.id %>']");
+  bookingStatus.innerHTML = "accepted";
+}
+
+  accept('<%= j render "bookings/status", booking: @booking %>');
