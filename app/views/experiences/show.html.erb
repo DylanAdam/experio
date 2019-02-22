@@ -15,7 +15,7 @@
         <hr>
         <div class="experience-reviews flex">
           <i class="fas fa-star"></i>
-          <p><%= @experience.reviews.length %> avis</p>
+          <p><%= "#{@experience.bookings.count} REVIEW".pluralize(@experience.bookings.count) %></p>
         </div>
         <hr>
 
@@ -61,7 +61,7 @@
   </div>
 
   <div class="description">
-    <h2>A propos de <%= @experience.title %></h2>
+    <h2>About : <%= @experience.title.capitalize %></h2>
     <div class="description-content">
       <p><%= @experience.description %></p>
     </div>
@@ -79,4 +79,26 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
+  <div class="comments">
+    <h2> <%= "Review".pluralize(@experience.bookings.count) %></h2>
+    <% @experience.bookings.each do |booking| %>
+    <% if %>
+      <div class="comments-content">
+        <div class="comment-content-header">
+          <div class="comment-content-header-name">
+            <p><%= "#{booking.user.first_name} #{booking.user.last_name}" %></p>
+          </div>
+          <div class="rating">
+            <div class="stars">
+              <% booking.review.rating.times do |star| %>
+              <i class="fas fa-star stars" style="color: #ffd33a;"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <p><%= booking.review.description %></p>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>

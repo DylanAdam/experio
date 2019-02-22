@@ -47,7 +47,11 @@
               <p><%= booking.date %></p>
               <p><%= booking.number_of_participants %></p>
             </div>
+            <div class="review-secttion">
+              <%= render 'reviews/form', booking: booking, review: @review %>
+            </div>
           </div>
+
         <% end %>
       </div>
 

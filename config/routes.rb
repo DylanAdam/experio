@@ -16,7 +16,6 @@ Rails.application.routes.draw do
       put :decline
     end
   end
-
   get 'manage', to: 'experiences#manage', as: :manage
 
 end
