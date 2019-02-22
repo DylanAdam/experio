@@ -16,7 +16,6 @@
   background-color: white;
   padding: 30px;
   font-size: 18px;
-
 }
 
 .map img {
@@ -30,4 +29,32 @@
 
 #show-image {
   text-align: center;
+}
+
+
+.comments h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  text-align: center;
+  color: $blue;
+}
+
+.comments-content {
+  width: 100%;
+  text-align: justify;
+  background-color: white;
+  padding: 30px;
+  font-size: 18px;
+  margin: 20px 0px;
+}
+
+.comment-content-header {
+  display: flex;
+}
+
+.comment-content-header-name{
+  display: flex;
+  margin-right: 5px
 }

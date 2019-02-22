@@ -38,8 +38,6 @@ class ExperiencesController < ApplicationController
 
   def manage
     @experiences = policy_scope(Experience).order(created_at: :desc)
-    #@experiences = Experience.where
-    #authorize @experiences
   end
 
   def create
@@ -70,7 +68,7 @@ class ExperiencesController < ApplicationController
   #   redirect_to experience_path(@experience)
   # end
 
-  
+
 
   private
 
