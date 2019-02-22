@@ -11,12 +11,12 @@ import { jsCardPlayer } from '../components/card.js'
 import { jsButtonPlayer } from '../components/button.js'
 import { jsPayementPlayer } from '../components/payement.js'
 
+
 loadDynamicBannerText();
 initMapbox();
 jsCardPlayer();
 jsButtonPlayer();
-
 previewImageOnFileSelect();
 selectTab();
-
 jsPayementPlayer();
+

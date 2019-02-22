@@ -68,7 +68,7 @@
             <p><%= booking.user.company %></p>
           </div>
           <div class="booking-infos block">
-            <div class="booking-status-<%= booking.id %>"><%= booking.status %></div>
+            <%= render "bookings/status", booking: booking %>
             <div class="infos">
               <i class="far fa-calendar-alt"></i>
               <p><%= booking.date %></p>
@@ -77,9 +77,16 @@
               <i class="far fa-user"></i>
               <p><%= booking.number_of_participants %></p>
             </div>
-            <div class="action flex">
-              <button class="accept" data-id="<%= booking.id %>" type="button" class="btn btn-danger">Accept</button>
-              <button class="decline" data-id="<%= booking.id %>" type="button" class="btn btn-danger">Decline</button>
+            <% if booking.status == "pending" %>
+              <div class="action flex">
+                <%= link_to accept_booking_path(booking), method: :put, remote: true do %>
+                <button class="accept" data-id="<%= booking.id %>" type="button" class="btn btn-danger">Accept</button>
+                <% end %>
+                <%= link_to decline_booking_path(booking), method: :put, remote: true do %>
+                <button class="decline" data-id="<%= booking.id %>" type="button" class="btn btn-danger">Decline</button>
+                <% end %>
+            <% else %>
+            <% end %>
             </div>
           </div>
         </div>

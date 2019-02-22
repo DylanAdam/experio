@@ -4,13 +4,17 @@ Rails.application.routes.draw do
   resources :experiences do
     resources :bookings, only: [:new, :create, :destroy] do
       get 'payement', to: 'bookings#payement', as: :payement
-      get 'accept', to: 'bookings#accept', as: :accept
-      get 'decline', to: 'bookings#decline', as: :decline
     end
   end
 
-  resources :bookings, only: [:index, :show, :index, :destroy] do
-    resources :reviews, only: [:create]
+  # put '/bookings/:id/accept', to: 'bookings#accept', as: :accept
+  # put '/bookings/:id/decline', to: 'bookings#decline', as: :decline
+  resources :bookings, only: [:index, :show, :index, :destroy, :edit] do
+    resources :reviews, only: [:new, :create, :edit]
+    member do
+      put :accept
+      put :decline
+    end
   end
   get 'manage', to: 'experiences#manage', as: :manage
 

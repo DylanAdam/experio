@@ -24,4 +24,12 @@ class BookingPolicy < ApplicationPolicy
   def payement?
     record.user == user
   end
+
+  def accept?
+    record.experience.user == user
+  end
+
+  def decline?
+    record.experience.user == user
+  end
 end
