@@ -185,11 +185,11 @@ var cardnumber_mask = new IMask(cardnumber, {
 var expirationdate_mask = new IMask(expirationdate, {
     mask: 'MM{/}YY',
     groups: {
-
-           YY: {
+      
+    YY: {
       mask: IMask.MaskedRange,
-      from: 16,
-      to: 23
+      from: 0,
+      to: 99
     },
 
     MM: {
