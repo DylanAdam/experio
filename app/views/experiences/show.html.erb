@@ -79,7 +79,7 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-  <% if @experience.bookings.any?{|a| a.review != ""} %>
+  <% if @experience.bookings.any?{|a| a.review != nil} %>
     <div class="comments">
       <h2> <%= "Review".pluralize(@experience.bookings.count) %></h2>
       <% @experience.bookings.each do |booking| %>
