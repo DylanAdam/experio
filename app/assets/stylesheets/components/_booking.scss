@@ -1,0 +1,68 @@
+.booking {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid $red;
+}
+.booking:last-child {
+  border-bottom: none;
+}
+.booking-user {
+  flex-grow: 1;
+}
+
+.booking-user h3 {
+  color: black;
+}
+// .message-name {
+//   padding-left: 10px;
+//   min-width: 100px;
+// }
+// .message-name h3 {
+//   font-size: 13px;
+//   margin-bottom: 0px;
+// }
+// .message-name p {
+//   font-size: 13px;
+//   font-weight: lighter;
+//   opacity: 0.6;
+//   margin-top: 5px;
+// }
+.booking-user {
+  padding-left: 10px;
+  font-size: 20px;
+  color: $dark-gray;
+}
+.booking-user p {
+  padding-left: 30px;
+  color: $dark-gray;
+}
+
+.booking-user h3 {
+  padding-left: 30px;
+  padding-bottom: 10px;
+  color: black;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.booking-user p {
+  margin: 6 px 0;
+}
+.booking-status {
+  font-size: 14px;
+  font-weight: bold;
+}
+.status.accepted {
+  color: $blue;
+}
+.status.declined {
+  color: $red;
+}
+.status.pending {
+  color: lightgrey;
+}
+
+.booking-infos {
+  margin: 5px;
+}

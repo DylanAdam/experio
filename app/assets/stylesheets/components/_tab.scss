@@ -1,0 +1,20 @@
+.booking-menu-wrapper {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.tabs {
+  height: 30px;
+  justify-content: center;
+}
+
+.tabs ul {
+  margin: 20px;
+}
+
+.tabs  li {
+  color: $blue;
+  font-size: 26px;
+  padding: 20px 40px;
+  cursor: pointer;
+}

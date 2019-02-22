@@ -25,7 +25,7 @@
                   <p>DURATION</p>
                   <p><%= booking.experience.duration %></p>
                 </div>
-                <div class="infos">
+                <div class="infos ">
                   <i class="fas fa-euro-sign"></i>
                   <p>PRICE / PERS.</p>
                   <p><%= booking.experience.price %></p>
@@ -64,19 +64,21 @@
           <div class="booking-image" style="background-image: url('<%= cl_image_path booking.experience.photo %>');"></div>
           <div class="booking-user block">
             <h3><%= booking.experience.title %></h3>
-            <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
-            <p><%= booking.user.company %></p>
+            <p>Contact: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+            <p>Company: <%= booking.user.company %></p>
+            <div class="booking-infos flex">
+              <div class="infos flex">
+                <i class="far fa-calendar-alt"></i>
+                <p><%= booking.date %></p>
+              </div>
+              <div class="infos flex">
+                <i class="far fa-user"></i>
+                <p><%= booking.number_of_participants %></p>
+              </div>
+            </div>
           </div>
-          <div class="booking-infos block">
+          <div class="status block">
             <%= render "bookings/status", booking: booking %>
-            <div class="infos">
-              <i class="far fa-calendar-alt"></i>
-              <p><%= booking.date %></p>
-            </div>
-            <div class="infos">
-              <i class="far fa-user"></i>
-              <p><%= booking.number_of_participants %></p>
-            </div>
             <% if booking.status == "pending" %>
               <div class="action flex">
                 <%= link_to accept_booking_path(booking), method: :put, remote: true do %>
@@ -85,9 +87,9 @@
                 <%= link_to decline_booking_path(booking), method: :put, remote: true do %>
                 <button class="decline" data-id="<%= booking.id %>" type="button" class="btn btn-danger">Decline</button>
                 <% end %>
+              </div>
             <% else %>
             <% end %>
-            </div>
           </div>
         </div>
         <% end %>
