@@ -36,6 +36,9 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def accept
+  end
+
   private
 
   def booking_params

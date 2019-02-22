@@ -1,24 +1,18 @@
-const selectTab = () => {
+// const changeStatus = () => {
 
-  const mybookings = document.querySelector(".my-bookings");
-  const bookingsAsOwner = document.querySelector(".bookings-as-owner");
-  const bookingsAsOwnerHead = document.querySelector(".tabs .bookings-as-owner-head");
-  const mybookingsHead = document.querySelector(".tabs .my-bookings-head");
+//   const acceptBtn = document.querySelectorAll(".accept");
+//   const declineBtn = document.querySelectorAll(".decline");
 
-  mybookingsHead.addEventListener("click", (event) => {
-    console.log(event);
-    event.currentTarget.classList.add("active");
-    bookingsAsOwnerHead.classList.remove("active");
-    mybookings.classList.remove("hidden");
-    bookingsAsOwner.classList.add("hidden");
-  });
+// acceptBtn.forEach((element) => {
+//  element.addEventListener("click", (event) => {
+//   const idBooking = event.currentTarget.dataset.id;
 
-  bookingsAsOwnerHead.addEventListener("click", (event) => {
-    event.currentTarget.classList.add("active");
-    mybookingsHead.classList.remove("active");
-    mybookings.classList.add("hidden");
-    bookingsAsOwner.classList.remove("hidden");
-  });
-}
+// // trouver le booking avec l'id
+//   const booking = ;
+//   console.log(idBooking)
+//   booking.status = "accepted"
+//   });
+//  });
+// };
 
-export { selectTab };
+// export { changeStatus };
