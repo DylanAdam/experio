@@ -23,6 +23,7 @@ class ExperiencesController < ApplicationController
       lat: @experience.latitude
     }
     @booking = Booking.new
+    @review = Review.new
     authorize @experience
   end
 
@@ -70,7 +71,7 @@ class ExperiencesController < ApplicationController
   #   redirect_to experience_path(@experience)
   # end
 
-  
+
 
   private
 

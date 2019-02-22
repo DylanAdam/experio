@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:index, :show, :index, :destroy] do
-    resources :reviews, only: [:new, :create, :edit]
+    resources :reviews, only: [:create]
   end
 
   get 'manage', to: 'experiences#manage', as: :manage
