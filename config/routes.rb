@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :experiences do
     resources :bookings, only: [:new, :create, :destroy] do
       get 'payement', to: 'bookings#payement', as: :payement
+      get 'accept', to: 'bookings#accept', as: :accept
+      get 'decline', to: 'bookings#decline', as: :decline
+
     end
   end
 

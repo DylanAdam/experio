@@ -14,43 +14,40 @@
 
       <div class="my-bookings bookings">
         <% @mybookings.each do |booking| %>
-        <div class="booking flex">
-          <div class="booking-image" style="background-image: url('<%= cl_image_path booking.experience.photo %>');"></div>
-          <div class="booking-user block">
-            <h3><%= booking.experience.title %></h3>
-            <p><%= booking.experience.address %></p>
-            <div class="experience-infos flex">
-              <div class="infos">
-                <i class="far fa-clock"></i>
-                <p>DURATION</p>
-                <p><%= booking.experience.duration %></p>
-              </div>
-              <div class="infos">
-                <i class="fas fa-euro-sign"></i>
-                <p>PRICE / PERS.</p>
-                <p><%= booking.experience.price %></p>
-              </div>
-              <div class="infos">
-                <i class="far fa-user"></i>
-                <p>MIN PEOPLE</p>
-                <p><%= booking.experience.capacity_min %></p>
-              </div>
-              <div class="infos">
-                <i class="far fa-calendar-alt"></i>
-                <p>VALIDITY</p>
-                <p><%= booking.experience.validity_date %></p>
+          <div class="booking flex">
+            <div class="booking-image" style="background-image: url('<%= cl_image_path booking.experience.photo %>');"></div>
+            <div class="booking-user block">
+              <h3><%= booking.experience.title %></h3>
+              <p><%= booking.experience.address %></p>
+              <div class="experience-infos flex">
+                <div class="infos">
+                  <i class="far fa-clock"></i>
+                  <p>DURATION</p>
+                  <p><%= booking.experience.duration %></p>
+                </div>
+                <div class="infos">
+                  <i class="fas fa-euro-sign"></i>
+                  <p>PRICE / PERS.</p>
+                  <p><%= booking.experience.price %></p>
+                </div>
+                <div class="infos">
+                  <i class="far fa-user"></i>
+                  <p>MIN PEOPLE</p>
+                  <p><%= booking.experience.capacity_min %></p>
+                </div>
+                <div class="infos">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>VALIDITY</p>
+                  <p><%= booking.experience.validity_date %></p>
+                </div>
               </div>
             </div>
+            <div class="booking-infos block">
+              <div class="booking-status"><%= booking.status %></div>
+              <p><%= booking.date %></p>
+              <p><%= booking.number_of_participants %></p>
+            </div>
           </div>
-          <div class="booking-infos block">
-            <div class="booking-status"><%= booking.status %></div>
-            <p><%= booking.date %></p>
-            <p><%= booking.number_of_participants %></p>
-
-          </div>
-          <% end %>
-        </div>
-
         <% end %>
       </div>
 
@@ -67,7 +64,7 @@
             <p><%= booking.user.company %></p>
           </div>
           <div class="booking-infos block">
-            <div class="booking-status"><%= booking.status %></div>
+            <div class="booking-status-<%= booking.id %>"><%= booking.status %></div>
             <div class="infos">
               <i class="far fa-calendar-alt"></i>
               <p><%= booking.date %></p>
@@ -77,20 +74,8 @@
               <p><%= booking.number_of_participants %></p>
             </div>
             <div class="action flex">
-              <div class="fancy-button">
-                <div class="left-frills frills"></div>
-                <%= link_to experiences_path do %>
-                <div class="button">Accept</div>
-                <% end %>
-                <div class="right-frills frills"></div>
-              </div>
-              <div class="fancy-button">
-                <div class="left-frills frills"></div>
-                <%= link_to experiences_path do %>
-                <div class="button">Decline</div>
-                <% end %>
-                <div class="right-frills frills"></div>
-              </div>
+              <button class="accept" data-id="<%= booking.id %>" type="button" class="btn btn-danger">Accept</button>
+              <button class="decline" data-id="<%= booking.id %>" type="button" class="btn btn-danger">Decline</button>
             </div>
           </div>
         </div>
@@ -101,6 +86,3 @@
 
   </div>
 </div>
-
-        <% end %>
-
