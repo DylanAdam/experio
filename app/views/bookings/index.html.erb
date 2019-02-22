@@ -25,7 +25,7 @@
                   <p>DURATION</p>
                   <p><%= booking.experience.duration %></p>
                 </div>
-                <div class="infos ">
+                <div class="infos">
                   <i class="fas fa-euro-sign"></i>
                   <p>PRICE / PERS.</p>
                   <p><%= booking.experience.price %></p>
@@ -67,11 +67,11 @@
             <p>Contact: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
             <p>Company: <%= booking.user.company %></p>
             <div class="booking-infos flex">
-              <div class="infos flex">
+              <div class="infos-owner flex">
                 <i class="far fa-calendar-alt"></i>
                 <p><%= booking.date %></p>
               </div>
-              <div class="infos flex">
+              <div class="infos-owner flex">
                 <i class="far fa-user"></i>
                 <p><%= booking.number_of_participants %></p>
               </div>

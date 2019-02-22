@@ -60,12 +60,19 @@
 
 .infos {
   display: block;
+  margin-left: 5px;
+  margin-right: 5px;
 }
-
 
 .experience-infos {
  text-align: center;
  padding: 5px 20px;
+ }
+
+.experience-infos-1 {
+ text-align: center;
+ padding: 5px 20px;
+ justify-content: space-between;
 }
 
 .experience-reviews p {

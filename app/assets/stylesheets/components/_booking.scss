@@ -89,13 +89,19 @@
 
 }
 
-.infos {
-  margin-left: 15px;
+.infos p {
+ padding-left: 0px;
 }
 
-.infos p {
-  padding-left: 5px;
+.infos {
+  text-align: center;
 }
-.infos i {
-  margin-left: 10px;
+
+.infos-owner p {
+  margin-left: 5px;
+}
+
+
+.infos-owner  {
+  margin-left: 15px;
 }
