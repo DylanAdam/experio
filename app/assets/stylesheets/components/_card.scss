@@ -11,6 +11,9 @@ $cardHeight: 380px;
 
 #map {
   width: 35%;
+      height: 100vh;
+    top: 0 !important;
+    position: sticky !important;
 }
 
 .container-index {
