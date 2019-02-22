@@ -39,6 +39,12 @@ class ExperiencesController < ApplicationController
 
   def manage
     @experiences = policy_scope(Experience).order(created_at: :desc)
+    @markers = @experiences.map do |experience|
+      {
+        lng: experience.longitude,
+        lat: experience.latitude
+      }
+    end
   end
 
   def create
@@ -58,18 +64,16 @@ class ExperiencesController < ApplicationController
     redirect_to experience_path(@experience)
   end
 
-  # def destroy
-  #   @experience.destroy
-  #   authorize @experience
-  #   @experience.user = current_user
-  #   if @experience.destroy!
-  #   # Penser a renvoyer vers la home page !! (Alex)
-  #   redirect_to root_path
-  #   else
-  #   redirect_to experience_path(@experience)
-  # end
-
-
+  def destroy
+    @experience = Experience.find(params[:id])
+    @experience.destroy
+    authorize @experience
+    if @experience.destroy
+      redirect_to manage_path
+    else
+      redirect_to manage_path
+    end
+  end
 
   private
 
