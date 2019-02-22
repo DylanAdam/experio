@@ -54,13 +54,13 @@
   font-weight: bold;
 }
 .status.accepted {
-  color: $blue;
+  color: $green;
 }
 .status.declined {
   color: $red;
 }
 .status.pending {
-  color: lightgrey;
+  color: $blue;
 }
 
 .booking-infos {
