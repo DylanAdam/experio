@@ -39,11 +39,10 @@
                 </div>
                 <p class="text-autocrop"> <%= experience.description %> </p>
               </div>
-              <a class="button-cards" href="/experiences/<%= experience.id %>">Book Now</a>
+              <%= link_to "Delete", experience_path(experience), method: :delete, :class => "button-cards" %>
             </div>
           </div>
           <% end %>
-          <%= link_to "delete", experience_path(experience), method: :delete  %>
         </div>
         <% end %>
       </div>
