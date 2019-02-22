@@ -80,13 +80,17 @@
           <div class="status block">
             <%= render "bookings/status", booking: booking %>
             <% if booking.status == "pending" %>
-              <div class="action flex">
-                <%= link_to accept_booking_path(booking), method: :put, remote: true do %>
-                <button class="accept" data-id="<%= booking.id %>" type="button" class="btn btn-danger">Accept</button>
-                <% end %>
+              <div class="action block">
+                <div>
+                  <%= link_to accept_booking_path(booking), method: :put, remote: true do %>
+                  <button id="accept" data-id="<%= booking.id %>" type="button" class="btn btn-danger">Accept</button>
+                  <% end %>
+                </div>
+                <div>
                 <%= link_to decline_booking_path(booking), method: :put, remote: true do %>
-                <button class="decline" data-id="<%= booking.id %>" type="button" class="btn btn-danger">Decline</button>
+                <button id="decline" data-id="<%= booking.id %>" type="button" class="btn btn-danger">Decline</button>
                 <% end %>
+                </div>
               </div>
             <% else %>
             <% end %>

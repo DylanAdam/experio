@@ -1,5 +1,13 @@
 function decline(innerHTML) {
   const bookingStatus = document.querySelector("[data-booking-id='<%= @booking.id %>']");
-  bookingStatus.innerHTML = "decline";
+  bookingStatus.innerHTML = "Declined";
+  bookingStatus.classList.remove("pending");
+  bookingStatus.classList.add("declined");
+  const accept = document.getElementById('accept');
+  const decline = document.getElementById('decline');
+  accept.classList.add("hidden");
+  decline.classList.add("hidden");
+
 }
+
   decline('<%= j render "bookings/status", booking: @booking %>');
