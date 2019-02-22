@@ -1,6 +1,13 @@
 function accept(innerHTML) {
   const bookingStatus = document.querySelector("[data-booking-id='<%= @booking.id %>']");
-  bookingStatus.innerHTML = "accepted";
+  bookingStatus.innerHTML = "Accepted";
+  bookingStatus.classList.remove("pending");
+  bookingStatus.classList.add("accepted");
+  const accept = document.getElementById('accept');
+  const decline = document.getElementById('decline');
+  accept.classList.add("hidden");
+  decline.classList.add("hidden");
+
 }
 
   accept('<%= j render "bookings/status", booking: @booking %>');
