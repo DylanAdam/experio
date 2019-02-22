@@ -23,7 +23,6 @@ class ExperiencesController < ApplicationController
       lat: @experience.latitude
     }
     @booking = Booking.new
-    @review = Review.new
     authorize @experience
   end
 
@@ -39,8 +38,6 @@ class ExperiencesController < ApplicationController
 
   def manage
     @experiences = policy_scope(Experience).order(created_at: :desc)
-    #@experiences = Experience.where
-    #authorize @experiences
   end
 
   def create

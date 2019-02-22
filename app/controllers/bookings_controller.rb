@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   def index
     @mybookings = policy_scope(Booking).where(user: current_user)
     @bookings_as_owner = current_user.bookings_as_owner
+    @review = Review.new
   end
 
   def new

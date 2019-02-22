@@ -1,17 +1,18 @@
 class ReviewsController < ApplicationController
   def create
-    @experience = Experience.find(params[:experience_id])
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
-    @review.experience = @experience
+    authorize @review
+    @review.booking = @booking
     if @review.save
-      redirect_to experience_path(@experience)
+      redirect_to bookings_path
     else
-      render 'experiences/show'
+      render 'bookings/index'
     end
   end
 
   def show
-    @experience = Experience.find(params[:id])
+    @booking = Booking.find(params[:id])
     @review = Review.new
   end
 
