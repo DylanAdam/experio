@@ -38,6 +38,24 @@ const fitMapToMarkers = (map, markers) => {
   }
 }
 
+// markers.forEach((marker) => {
+
+//   // Create a HTML element for your custom marker
+//   const element = document.createElement('div');
+//   element.className = 'marker';
+//   element.style.backgroundImage = `url('logo-blue.png')`;
+//   element.style.backgroundSize = 'contain';
+//   element.style.width = '25px';
+//   element.style.height = '25px';
+
+//   // Pass the element as an argument to the new marker
+//   new mapboxgl.Marker(element)
+//     .setLngLat([marker.lng, marker.lat])
+//     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+//     .setHTML(marker.infoWindow.content))
+//     .addTo(map);
+// });
+
 const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();

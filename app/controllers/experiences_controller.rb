@@ -20,7 +20,8 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
     @marker = {
       lng: @experience.longitude,
-      lat: @experience.latitude
+      lat: @experience.latitude,
+      image_url: helpers.asset_url('logo-blue.png')
     }
     @booking = Booking.new
     authorize @experience
