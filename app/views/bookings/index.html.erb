@@ -42,10 +42,10 @@
                 </div>
               </div>
             </div>
-            <div class="booking-infos block">
+            <div class="booking-infos-1 block">
               <div class="booking-status"><%= booking.status %></div>
-              <p><%= booking.date %></p>
-              <p><%= booking.number_of_participants %></p>
+              <br>
+              <p> <i class="fas fa-user"></i>  <%= booking.number_of_participants %></p>
             </div>
             <div class="review-secttion">
               <%= render 'reviews/form', booking: booking, review: @review %>
