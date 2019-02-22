@@ -70,6 +70,8 @@ class ExperiencesController < ApplicationController
   #   redirect_to experience_path(@experience)
   # end
 
+  
+
   private
 
   def experiences_params
