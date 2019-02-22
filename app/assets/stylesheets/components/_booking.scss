@@ -69,6 +69,7 @@
   margin: 5px;
 }
 
+
 #accept {
   background-color: $green;
   border: none;
@@ -86,4 +87,21 @@
   border-radius: 4px;
   border: none;
 
+}
+
+.infos p {
+ padding-left: 0px;
+}
+
+.infos {
+  text-align: center;
+}
+
+.infos-owner p {
+  margin-left: 5px;
+}
+
+
+.infos-owner  {
+  margin-left: 15px;
 }
