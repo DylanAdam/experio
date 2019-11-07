@@ -9,24 +9,24 @@ class BookingsController < ApplicationController
   def new
     # @experience = Experience.find(params[:id])
     @booking = Booking.new
-    authorize @booking
+    authorize @order
   end
 
   def edit
     @booking = Booking.find(params[:booking_id])
-    authorize @booking
+    authorize @order
   end
 
   def create
     @booking = Booking.new(booking_params)
-    authorize @booking
+    authorize @order
     @experience = Experience.find(params[:experience_id])
     @booking.experience = @experience
     @booking.user = current_user
     if @booking.save
       redirect_to experience_booking_payement_path(@experience, @booking)
     else
-      render "experiences/show"
+      render "orderss/show"
     end
   end
 
