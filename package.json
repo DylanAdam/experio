@@ -4,7 +4,7 @@
   "dependencies": {
     "@mapbox/mapbox-gl-geocoder": "^3.1.2",
     "@rails/webpacker": "3.5",
-    "bootstrap": "3.4.0",
+    "bootstrap": "3.4.1",
     "flatpickr": "^4.5.2",
     "install": "^0.12.2",
     "jquery": "^3.3.1",
